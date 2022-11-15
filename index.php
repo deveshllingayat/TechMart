@@ -19,7 +19,7 @@
         <!--first child-->
         <nav class="navbar navbar-expand-lg bg-primary">
   <div class="container-fluid" >
-    <img src="./images/2.png" class="logo">
+    <img src="./images/LOGO.png" class="logo">
     <a class="navbar-brand" href="#" style="font-family:Trebuchet MS; color:white;" ><b>T</b><i>ech</i>M<i>art</i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
