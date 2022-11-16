@@ -18,9 +18,9 @@
     <div class="container-fluid p-0">
         <!--first child-->
         <nav class="navbar navbar-expand-lg bg-primary">
-  <div class="container-fluid" >
-    <img src="./images/LOGO.png" class="logo">
-    <a class="navbar-brand" href="#" style="font-family:Trebuchet MS; color:white;" ><b>T</b><i>ech</i>M<i>art</i></a>
+  <div class="container-fluid" style="font-family:'Candara';font-size:20px">
+    <img src="./images/Logo.gif" class="logo">
+    <a class="navbar-brand" href="#" style="font-family:Trebuchet MS; color:white;" ></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,22 +39,153 @@
           <a class="nav-link" href="#"style="color:white;">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"style="color:white;"><i class="fa-solid fa-cart-shopping"><sup>1</sup></i></a>
+          <a class="nav-link" href="#"style="color:white;"><i class="fa-solid fa-cart-shopping"><sup>1</sup></i> Cart</a>
         </li><li class="nav-item">
           <a class="nav-link" href="#"style="color:white;">Total Price : </a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-info" type="submit"style="color:white;">Search</button>
+      <form class="d-flex" role="search" >
+        <input class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search";  >
+        <button class="btn btn-outline-primary" type="submit"style="color:white;"><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
     </div>
   </div>
 </nav>
-    </div>
-<div class="Container"><h1>Container</div>
 
-    <div class="bg-primary p-3 text-center" style="color:white">All Rights Reserved by Devesh Lingayat</div>
+  <!--Second child -->
+  <nav class = "navbar navbar-expand-lg mb-4" style="background-color:darkblue;">
+    <ul class = "navbar-nav me-auto"  style="font-family:'Candara';font-size:20px">
+      <li class = "nav-item">
+        <a class = "nav-link" href="#"style="color:white;">Welcome Guest</a>
+      </li>
+      <li class = "nav-item">
+        <a class = "nav-link" href="#"style="color:white;">Login</a>
+      </li>
+  </ul>
+</nav>
+
+<!-- Third child-->
+<div style="font-family:'Candara';color:white;">
+  <h2 class = "text-center" >APPLE INSPIRE</h3>
+  <p class="text-center">Think Different.</p>
+</div>
+
+  <!-- fourth child-->
+  <div class="row">
+    <div class="col-md-10 mt-2">
+      <!--Products-->
+      <div class="row">
+      <div class="col-md-4 mb-3"style="width: 18rem;">
+          <div class="card">
+            <img src="./images/iphone14.jpg" class="card-img-top" alt="Iphone 14">
+             <div class="card-body">
+                 <h5 class="card-title">Apple Iphone 14</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                 <a href="#" class="btn btn-primary">Add to Cart</a>
+                 <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3"style="width: 18rem;">
+          <div class="card">
+            <img src="./images/iphone14Pro.png" class="card-img-top" alt="...">
+              <div class="card-body">
+            <h5 class="card-title">Apple Iphone 14 Pro</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+            <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3"style="width: 18rem;">
+          <div class="card">
+            <img src="./images/iphone14ProMax.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Apple Iphone 14 Pro Max</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <a href="#" class="btn btn-secondary">View More</a>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3"style="width: 18rem;">
+          <div class="card">
+              <img src="./images/iphone14Pro.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Apple Iphone 14 Pro</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-secondary">View More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3"style="width: 18rem;">
+          <div class="card">
+              <img src="./images/iphone14Pro.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Apple Iphone 14 Pro</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-secondary">View More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3"style="width: 18rem;">
+          <div class="card">
+              <img src="./images/iphone14Pro.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Apple Iphone 14 Pro</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-secondary">View More</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    
+<!--side nav-->
+    <div class="col-md-2 bg-light p-0"style="font-family:'Candara';">
+      <ul class="navbar-nav me-auto text-center">
+        <li class="nav-item bg-primary">
+          <!-- Brands to be displayed -->
+          <a href="#" class="nav-link text-light"><h4>Delivery Brands</h4></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark"><h5><b>Apple</h5></a>
+        </li> <li class="nav-item">
+          <a href="#" class="nav-link text-dark"><h5><b>Samsung</b></h5></a>
+        </li> <li class="nav-item ">
+          <a href="#" class="nav-link text-dark"><h5><b>Google</b></h5></a>
+        </li>
+        </li> <li class="nav-item ">
+          <a href="#" class="nav-link text-dark"><h5><b>OnePlus</b></h5></a>
+        </li></li> <li class="nav-item ">
+          <a href="#" class="nav-link text-dark"><h5><b>Realme</b></h5></a>
+        </li>
+      </ul>
+      <!--Categories to be displayed-->
+      <ul class="navbar-nav me-auto text-center">
+        <li class="nav-item bg-primary">
+          <!-- Brands to be displayed -->
+          <a href="#" class="nav-link text-light"><h4><b>Categories</b></h4></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark"><h5><b>Laptops</b></h5></a>
+        </li> <li class="nav-item">
+          <a href="#" class="nav-link text-dark"><h5><b>Mobiles & Tablets</b></h5></a>
+        </li> <li class="nav-item ">
+          <a href="#" class="nav-link text-dark"><h5><b>Audio & Accessories</b></h5></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<!-- topmost div-->
+</div>
+    <div class="bg-primary p-3 text-center" style="font-family:'Candara';color:white;font-size:20px"><i class="fa-regular fa-copyright"></i> All Rights Reserved by Devesh</div>
 
     <!-- Bootstrap Js link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
