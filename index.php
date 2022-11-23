@@ -18,16 +18,25 @@
  }
 
  .navbar .navbar-nav .nav-link:hover {
-  color: #202020; 
+  font-size:18px;
  }
  .nav-link {
-     transition: 0.1s
+     transition: 0.2s
  }
  .navbar form button{
   color:white;
 }
-.navbar form button:hover{
-  color:#202020;
+.navbar form button i:hover{
+  font-size:20px;
+}
+.side-nav .navbar-nav .nav-link img{
+ object-fit:contain;
+}
+.side-nav .navbar-nav .nav-link img:hover{
+ width:110px;
+ height:50px;
+ object-fit:contain;
+ transition:0.1s;
 }
   </style>
 </head>
@@ -161,23 +170,23 @@
     </div>
     
 <!--side nav-->
-    <div class="col-md-2 bg-light p-0"style="font-family:'Trebuchet MS';">
+    <div class="side-nav col-md-2 bg-light p-0"style="font-family:'Trebuchet MS';">
       <ul class="navbar-nav me-auto text-center">
         <li class="nav-item bg-primary">
           <!-- Brands to be displayed -->
           <a href="#" class="nav-link text-light"><h4>Delivery Brands</h4></a>
         </li>
         <li class="nav-item"style="background-color:#E8E8E8">
-          <a href="#" class="nav-link text-dark"><img src="https://sguru.org/wp-content/uploads/2018/02/2000px-Apple_Logo.svg_.png"width="40px"height="40px" alt="Apple" ></a>
+          <a href="#" class="nav-link "><img src="https://sguru.org/wp-content/uploads/2018/02/2000px-Apple_Logo.svg_.png"width="40px"height="40px" alt="Apple" ></a>
         </li> <li class="nav-item">
-          <a href="#" class="nav-link text-dark"><img src="https://th.bing.com/th/id/R.10f238d6f72b7c964192fa060f9c120a?rik=ks7Oh5Qx7x0F6w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fsamsung-hd-png-share-2173.png&ehk=%2b8Cvyqe0%2f8j%2btUvezHRMSaU3lY3GJcG5Ipx4myDw4ys%3d&risl=&pid=ImgRaw&r=0"width="100px" height="40px" alt="Samsung"></a>
+          <a href="#" class="nav-link "><img src="https://th.bing.com/th/id/R.10f238d6f72b7c964192fa060f9c120a?rik=ks7Oh5Qx7x0F6w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fsamsung-hd-png-share-2173.png&ehk=%2b8Cvyqe0%2f8j%2btUvezHRMSaU3lY3GJcG5Ipx4myDw4ys%3d&risl=&pid=ImgRaw&r=0"width="100px" height="40px" alt="Samsung" class="sam"></a>
         </li> <li class="nav-item ">
-          <a href="#" class="nav-link text-dark"style="background-color:#E8E8E8"><img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png"width="40px" height="40px" alt="Google" ></a>
+          <a href="#" class="nav-link "style="background-color:#E8E8E8"><img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png"width="40px" height="40px" alt="Google" ></a>
         </li>
         </li> <li class="nav-item ">
-          <a href="#" class="nav-link text-dark"><img src="https://th.bing.com/th/id/OIP.nsEya4TC3E0rYEBUby5LEwHaHa?pid=ImgDet&rs=1" width="40px" height="40px" alt="OnePlus"></a>
+          <a href="#" class="nav-link "><img src="https://th.bing.com/th/id/OIP.nsEya4TC3E0rYEBUby5LEwHaHa?pid=ImgDet&rs=1" width="40px" height="40px" alt="OnePlus"></a>
         </li></li> <li class="nav-item ">
-          <a href="#" class="nav-link text-dark"style="background-color:#E8E8E8"><img src="https://th.bing.com/th/id/OIP.TJhiOHMAM8g7mT-LNQMVuwHaHa?pid=ImgDet&rs=1" width="40px" height="40px" alt="Realme" ></a>
+          <a href="#" class="nav-link "style="background-color:#E8E8E8"><img src="https://th.bing.com/th/id/OIP.TJhiOHMAM8g7mT-LNQMVuwHaHa?pid=ImgDet&rs=1" width="40px" height="40px" alt="Realme" ></a>
         </li>
       </ul>
       <!--Categories to be displayed-->
