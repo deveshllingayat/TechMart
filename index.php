@@ -20,7 +20,6 @@ include('includes/connect.php');
  .navbar .navbar-nav .nav-link{
   color: white;
  }
-
  .navbar .navbar-nav .nav-link:hover {
   font-size:18px;
  }
@@ -89,7 +88,6 @@ include('includes/connect.php');
     </div>
   </div>
 </nav>
-
 
 <!-- Third child-->
 <div style="font-family:'Trebuchet MS';color:white;">
@@ -169,7 +167,6 @@ include('includes/connect.php');
           </div>
         </div>
 
-
       </div>
     </div>
     
@@ -177,7 +174,7 @@ include('includes/connect.php');
     <div class="side-nav col-md-2 bg-light p-0 "style="font-family:'Trebuchet MS';">
       <ul class="navbar-nav me-auto text-center">
         <li class="nav-item bg-primary">
-          <!-- Brands to be displayed -->
+        <!-- Brands to be displayed -->
           <a href="#" class="nav-link text-light"><h4>Top Brands</h4></a>
         </li>
         <?php 
@@ -189,11 +186,11 @@ include('includes/connect.php');
           $brand_id = $row_data['brand_id'];
           if($brand_id%2!=0){
             echo "<li class='nav-item'style='background-color:#E8E8E8'>
-            <a href='index.php?brand=$brand_id' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
+            <a href='index.php?brand=$brand_title' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
           </li>";
           }else{
             echo "<li class='nav-item bg-light'>
-            <a href='index.php?brand=$brand_id' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
+            <a href='index.php?brand=$brand_title' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
           </li>";
           }
         }
@@ -202,7 +199,6 @@ include('includes/connect.php');
       <!--Categories to be displayed-->
       <ul class="navbar-nav me-auto text-center">
         <li class="nav-item bg-primary">
-          <!-- Brands to be displayed -->
           <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
         </li>
         <?php 
@@ -219,11 +215,8 @@ include('includes/connect.php');
             echo "<li class='nav-item bg-light'>
             <a href='index.php?category=$category_id' class='nav-link text-dark'><h5>$category_title</h5></a>
           </li> ";
-          }
-          
-          
+          }        
         }
-        
         ?>
       </ul>
     </div>
