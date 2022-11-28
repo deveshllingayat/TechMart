@@ -29,7 +29,6 @@
            font-size:18px;
         }
         .button .btn{
-           
             font-size:24px;
             font-family:'Trebuchet MS';
             color: black;
@@ -68,7 +67,7 @@
                 </div>
                 <div class="button text-center " >
                     <buttton class="btn mx-1"s>
-                        <a href="" class="nav-link mx-1">
+                        <a href="insert_products.php" class="nav-link mx-1">
                             Insert Products
                         </a>
                     </buttton>
