@@ -84,8 +84,8 @@
                 <label for="product_price" class="form-label">Product Price</label>
                 <input type="text"name="product_price"id="product_price"class="form-control" placeholder="Enter Product Price"autocomplete="off"required/>
             </div>
-            <div class="form-outline mb-4 w-50 m-auto">
-                <input type="submit"name="product_product"class="btn btn-light "value="Insert Product"style="font-size:14px;font-family:'Trebuchet MS';color: black;background-color:white;">
+            <div class="form-outline mb-4 m-auto"style="display:flex;justify-content:center;">
+                <input type="submit"name="product_product"class="btn btn-primary"value="Insert Product"style="border-radius:15px;font-size:16px;font-family:'Trebuchet MS';color: white;">
             </div>
         </form>
     </div>
