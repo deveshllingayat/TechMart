@@ -1,5 +1,39 @@
 <?php 
     include("../includes/connect.php");
+    if(isset($_POST['insert_product'])){
+        $product_title = $_POST['product_title'];
+        $product_desc = $_POST['product_desc'];
+        $product_keyword = $_POST['product_keyword'];
+        $product_category = $_POST['product_category'];
+        $product_brand = $_POST['product_brand'];
+        $product_price = $_POST['product_price'];
+        $product_status = 'true';
+        //accessing images 
+        $product_image1= $_FILES['product_image1']['name'];
+        $product_image2= $_FILES['product_image2']['name'];
+        $product_image3= $_FILES['product_image3']['name'];
+        //accessing temp name
+        $temp_image1= $_FILES['product_image1']['tmp_name'];
+        $temp_image2= $_FILES['product_image2']['tmp_name'];
+        $temp_image3= $_FILES['product_image3']['tmp_name'];
+       //checking empty condition
+       if($product_title=='' or $product_desc=='' or $product_keyword=='' or $product_category=='' or $product_brand=='' or $product_price=='' or $product_image1=='' or $product_image2=='' or $product_image3==''){
+        echo"<script>alert('Please fill all the available fields.')</script>";
+        exit();
+       }else{
+        move_uploaded_file($temp_image1,"./product_images/$product_image1");
+        move_uploaded_file($temp_image2,"./product_images/$product_image2");
+        move_uploaded_file($temp_image3,"./product_images/$product_image3");
+        //insert products
+        $insert_product = "insert into `products` (product_title,product_desc,product_keyword,category_id,brand_id,product_image1,product_image2,product_image3,product_price,date,status) values ('$product_title', '$product_desc','$product_keyword', '$product_category','$product_brand','$product_image1', '$product_image2', '$product_image3','$product_price',NOW(),'$product_status' )";
+        $result_query = mysqli_query($con,$insert_product);
+        if($result_query){
+            echo "<script>alert('Successfully inserted the product.')</script>";
+        }
+        
+       }
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +119,7 @@
                 <input type="text"name="product_price"id="product_price"class="form-control" placeholder="Enter Product Price"autocomplete="off"required/>
             </div>
             <div class="form-outline mb-4 m-auto"style="display:flex;justify-content:center;">
-                <input type="submit"name="product_product"class="btn btn-primary"value="Insert Product"style="border-radius:15px;font-size:16px;font-family:'Trebuchet MS';color: white;">
+                <input type="submit"name="insert_product"class="btn btn-primary"value="Insert Product"style="border-radius:15px;font-size:16px;font-family:'Trebuchet MS';color: white;">
             </div>
         </form>
     </div>
