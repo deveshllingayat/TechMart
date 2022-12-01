@@ -41,6 +41,7 @@ include('includes/connect.php');
  object-fit:contain;
  transition:0.1s;
 }
+
   </style>
 </head>
 <body>
@@ -186,11 +187,11 @@ include('includes/connect.php');
           $brand_id = $row_data['brand_id'];
           if($brand_id%2!=0){
             echo "<li class='nav-item'style='background-color:#E8E8E8'>
-            <a href='index.php?brand=$brand_title' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
+            <a href='index.php?brand=$brand_id' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
           </li>";
           }else{
             echo "<li class='nav-item bg-light'>
-            <a href='index.php?brand=$brand_title' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
+            <a href='index.php?brand=$brand_id' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
           </li>";
           }
         }
