@@ -1,6 +1,7 @@
 <!-- connect file-->
 <?php 
 include('includes/connect.php');
+include('functions/common_function.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,111 +91,59 @@ include('includes/connect.php');
   </div>
 </nav>
 
-<!-- Third child-->
-<div style="font-family:'Trebuchet MS';color:white;">
-  <h2 class = "text-center mt-2" >APPLE INSPIRE</h3>
-  <p class="text-center">Think Different.</p>
-</div>
 
+
+<!-- third child-->
+<div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="true">
+  <div class="carousel-indicators"style="filter:invert(60%);">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/Slide1.jpg" class="d-block w-100 " alt="..."style="height:250px;">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/Slide2.jpg" class="d-block w-100 " alt="..."style="height:250px;">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/Slide3.jpg" class="d-block w-100 " alt="..."style="height:250px;">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"style="filter:invert(100%);" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon"style="filter:invert(100%);" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
   <!-- fourth child-->
-  <div class="row ">
+  <div class="row px-1">
     <div class="col-md-10 mt-2 ">
       <!--Products-->
-      <div class="row ms-auto ">
-      <div class="col-md-4 mb-3"style="width: 18rem;">
-          <div class="card "style="border-radius:20px;margin:8px">
-            <img src="./images/iphone14.jpg" class="card-img-top" alt="Iphone 14"style="border-radius:20px;">
-             <div class="card-body">
-                 <h5 class="card-title">Iphone 14</h5>
-                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                 <a href="#" class="btn btn-primary">Add to Cart</a>
-                 <a href="#" class="btn btn-secondary">View More</a>
-              </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3"style="width: 18rem;">
-          <div class="card"style="border-radius:20px;margin:8px">
-            <img src="./images/iphone14Pro.png" class="card-img-top" alt="..."style="border-radius:20px;">
-              <div class="card-body">
-            <h5 class="card-title">Iphone 14 Pro</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to Cart</a>
-            <a href="#" class="btn btn-secondary">View More</a>
-              </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3"style="width: 18rem;">
-          <div class="card"style="border-radius:20px;margin:8px">
-            <img src="./images/iphone14ProMax.png" class="card-img-top" alt="..."style="border-radius:20px;">
-              <div class="card-body">
-                <h5 class="card-title">Iphone 14 Pro Max</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
-                <a href="#" class="btn btn-secondary">View More</a>
-              </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3"style="width: 18rem;">
-          <div class="card"style="border-radius:20px;margin:8px">
-              <img src="./images/iphone14Pro.png" class="card-img-top" alt="..."style="border-radius:20px;">
-            <div class="card-body">
-              <h5 class="card-title">Iphone 14 Pro</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Add to Cart</a>
-              <a href="#" class="btn btn-secondary">View More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3"style="width: 18rem;">
-          <div class="card"style="border-radius:20px;margin:8px">
-              <img src="./images/iphone14Pro.png" class="card-img-top" alt="..."style="border-radius:20px;">
-            <div class="card-body">
-              <h5 class="card-title">Iphone 14 Pro</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Add to Cart</a>
-              <a href="#" class="btn btn-secondary">View More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3"style="width: 18rem;">
-          <div class="card"style="border-radius:20px;margin:8px">
-              <img src="./images/iphone14Pro.png" class="card-img-top" alt="..."style="border-radius:20px;">
-            <div class="card-body">
-              <h5 class="card-title">Iphone 14 Pro</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Add to Cart</a>
-              <a href="#" class="btn btn-secondary">View More</a>
-            </div>
-          </div>
-        </div>
+      <div class="row  ">
+      <!-- fetching products-->
+      <?php
+        getProducts(); //it will fetch products from DB and display on homepage
+      ?>
 
+      <!--row end-->
       </div>
+      <!--column end-->
     </div>
     
 <!--side nav-->
-    <div class="side-nav col-md-2 bg-light p-0 "style="font-family:'Trebuchet MS';">
+    <div class="side-nav col-md-2  p-0 mt-3 mb-4"style="font-family:'Trebuchet MS';">
       <ul class="navbar-nav me-auto text-center">
         <li class="nav-item bg-primary">
         <!-- Brands to be displayed -->
           <a href="#" class="nav-link text-light"><h4>Top Brands</h4></a>
         </li>
         <?php 
-        $select_brands = "Select * from `brands`";
-        $result_brands = mysqli_query($con,$select_brands);
-        while($row_data=mysqli_fetch_assoc($result_brands)){
-          $brand_title = $row_data['brand_title'];
-          $brand_url = $row_data['brand_url'];
-          $brand_id = $row_data['brand_id'];
-          if($brand_id%2!=0){
-            echo "<li class='nav-item'style='background-color:#E8E8E8'>
-            <a href='index.php?brand=$brand_id' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
-          </li>";
-          }else{
-            echo "<li class='nav-item bg-light'>
-            <a href='index.php?brand=$brand_id' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
-          </li>";
-          }
-        }
+          getBrands();
         ?>
       </ul>
       <!--Categories to be displayed-->
@@ -203,27 +152,14 @@ include('includes/connect.php');
           <a href="#" class="nav-link text-light"><h4>Categories</h4></a>
         </li>
         <?php 
-        $select_categories = "Select * from `categories`";
-        $result_categories = mysqli_query($con,$select_categories);
-        while($row_data = mysqli_fetch_assoc($result_categories)){
-          $category_title = $row_data['category_title'];
-          $category_id = $row_data['category_id'];
-          if($category_id%2!=0){
-            echo "<li class='nav-item'>
-            <a href='index.php?category=$category_id' class='nav-link text-dark'style='background-color:#E8E8E8;'><h5>$category_title</h5></a>
-          </li> ";
-          }else{
-            echo "<li class='nav-item bg-light'>
-            <a href='index.php?category=$category_id' class='nav-link text-dark'><h5>$category_title</h5></a>
-          </li> ";
-          }        
-        }
+        getCategories();
         ?>
       </ul>
     </div>
   </div>
-
+<!-- large row end-->
 </div>
+
     <div class="bg-primary p-3 text-center" style="font-family:'Candara';color:white;font-size:20px"><i class="fa-regular fa-copyright"></i> All Rights Reserved by TechMart</div>
 
     <!-- Bootstrap Js link-->
