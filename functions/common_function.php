@@ -82,7 +82,7 @@ include('./includes/connect.php');
       //condition to check isset or not
       if(isset($_GET['brand'])){
       $brand_id = $_GET['brand'];
-      $select_query = "Select * from `products` where brand_id = $brand_id order by rand() ";// rand() to show random products of specific brand 
+      $select_query = "Select * from `products` where brand_id = $brand_id  ";// rand() to show random products of specific brand 
       $result_query = mysqli_query($con,$select_query);
       $no_of_rows = mysqli_num_rows($result_query);
         if($no_of_rows==0){
