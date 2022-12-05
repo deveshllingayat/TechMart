@@ -128,6 +128,8 @@ include('functions/common_function.php')
       <!-- fetching products-->
       <?php
         getProducts(); //it will fetch products from DB and display on homepage
+        getUniqueCategories();
+        getUniqueBrands();
       ?>
 
       <!--row end-->
