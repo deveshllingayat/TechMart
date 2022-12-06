@@ -75,9 +75,10 @@ include('functions/common_function.php')
           <a class="nav-link" href="#">Total Price : </a>
         </li>
       </ul>
-      <form class="d-flex ms-auto" role="search" >
-        <input class="form-control ms-2" type="search" placeholder="Search Products" aria-label="Search"style="width:350px;border-radius:20px;">
-        <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <form class="d-flex ms-auto"  method="get">
+        <input class="form-control ms-2" type="search" name = "search_data"placeholder="Search Products" aria-label="Search"style="width:350px;border-radius:8px;">
+        <!-- <input type = "submit"class="btn btn-outline-primary"value = "Search"name="search_data_product"> -->
+        <button class="btn btn-outline-primary" type="submit"name = "search_data_product" ><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
       <ul class = "navbar-nav ms-auto "  style="font-family:'Trebuchet MS';font-size:16px">
       <li class = "nav-item">
@@ -99,16 +100,20 @@ include('functions/common_function.php')
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="./images/Slide1.jpg" class="d-block w-100 " alt="..."style="height:250px;">
+      <img src="./images/Slide1.jpg" class="d-block w-100 " alt="Mobiles & Tablets"style="height:250px;">
     </div>
     <div class="carousel-item">
-      <img src="./images/Slide2.jpg" class="d-block w-100 " alt="..."style="height:250px;">
+      <img src="./images/Slide2.jpg" class="d-block w-100 " alt="Laptops"style="height:250px;">
     </div>
     <div class="carousel-item">
-      <img src="./images/Slide3.jpg" class="d-block w-100 " alt="..."style="height:250px;">
+      <img src="./images/Slide3.jpg" class="d-block w-100 " alt="Audio & Accessories"style="height:250px;">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/Slide4.jpg" class="d-block w-100 " alt="Televisions"style="height:250px;">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -127,7 +132,12 @@ include('functions/common_function.php')
       <div class="row  ">
       <!-- fetching products-->
       <?php
-        getProducts(); //it will fetch products from DB and display on homepage
+      if(isset($_GET['search_data_product'])){
+        searchProduct();
+      }else{
+        getProducts();
+      }
+         //it will fetch products from DB and display on homepage
         getUniqueCategories();
         getUniqueBrands();
       ?>
