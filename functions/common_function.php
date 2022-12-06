@@ -161,7 +161,10 @@ function searchProduct(){
           $search_data_value = $_GET['search_data'];
           $search_query = "Select * from `products` where product_keyword like '%$search_data_value%'";
           $result_query = mysqli_query($con,$search_query);
-              
+          $no_of_rows = mysqli_num_rows($result_query);
+          if($no_of_rows==0){
+            echo"<h2 style='font-family:Trebuchet MS;color:white;text-align:center;'>No Products Available!</h2>";
+          }    
         while($row = mysqli_fetch_assoc($result_query)){
             $product_title = $row['product_title'];
             $description = $row['product_desc'];
