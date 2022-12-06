@@ -159,7 +159,6 @@ function searchProduct(){
   global $con;
       if(isset($_GET['search_data_product'])){
           $search_data_value = $_GET['search_data'];
-  
           $search_query = "Select * from `products` where product_keyword like '%$search_data_value%'";
           $result_query = mysqli_query($con,$search_query);
               
