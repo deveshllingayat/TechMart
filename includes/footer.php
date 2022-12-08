@@ -1,0 +1,1 @@
+<div class="bg-primary p-3 text-center" style="font-family:'Trebuchet MS';color:white;font-size:20px"><i class="fa-regular fa-copyright"></i> All Rights Reserved by TechMart</div>
