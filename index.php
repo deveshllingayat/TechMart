@@ -58,10 +58,10 @@ include('functions/common_function.php')
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" >Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Products</a>
+          <a class="nav-link" href="displayAll.php">Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Register</a>
@@ -136,6 +136,7 @@ include('functions/common_function.php')
         searchProduct();
       }else{
         getProducts();
+        viewMore();
       }
          //it will fetch products from DB and display on homepage
         getUniqueCategories();
@@ -172,7 +173,9 @@ include('functions/common_function.php')
 <!-- large row end-->
 </div>
 
-    <div class="bg-primary p-3 text-center" style="font-family:'Candara';color:white;font-size:20px"><i class="fa-regular fa-copyright"></i> All Rights Reserved by TechMart</div>
+<?php
+    include("./includes/footer.php");
+?>
 
     <!-- Bootstrap Js link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
