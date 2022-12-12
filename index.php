@@ -156,6 +156,8 @@ include('functions/common_function.php')
           //it will fetch products from DB and display on homepage
           getUniqueCategories();
           getUniqueBrands();
+          // $ip = getIPAddress();  
+          // echo 'User Real IP Address - '.$ip;  
           ?>
 
           <!--row end-->
