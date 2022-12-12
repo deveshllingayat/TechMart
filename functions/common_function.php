@@ -23,17 +23,17 @@ function getProducts()
         $brand_id = $row['brand_id'];
 
         echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
-              <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px'>
-                <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
-                 <div class='card-body'>
-                     <h5 class='card-title'>$product_title</h5>
-                     <p class='card-text'>$description</p>
-                     <p class='card-price'>Price: $product_price</p>
-                     <a href='#' class='btn btn-primary'>Add to Cart</a>
-                     <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-                  </div>
-                </div>
-              </div>";
+        <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
+          <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+           <div class='card-body'>
+               <h5 class='card-title'>$product_title</h5>
+               <p class='card-text'>$description</p>
+               <p class='card-price'>Price: $product_price</p>
+               <a href='#' class='btn btn-primary'>Add to Cart</a>
+               <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+            </div>
+          </div>
+        </div>";
       }
     }
   }
@@ -60,17 +60,17 @@ function getAllProducts()
         $brand_id = $row['brand_id'];
 
         echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
-              <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px'>
-                <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
-                 <div class='card-body'>
-                     <h5 class='card-title'>$product_title</h5>
-                     <p class='card-text'>$description</p>
-                     <p class='card-price'>Price: $product_price</p>
-                     <a href='#' class='btn btn-primary'>Add to Cart</a>
-                     <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>                 
-                     </div>
-                </div>
-              </div>";
+        <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
+          <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+           <div class='card-body'>
+               <h5 class='card-title'>$product_title</h5>
+               <p class='card-text'>$description</p>
+               <p class='card-price'>Price: $product_price</p>
+               <a href='#' class='btn btn-primary'>Add to Cart</a>
+               <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+            </div>
+          </div>
+        </div>";
       }
     }
   }
@@ -143,17 +143,17 @@ function getUniqueCategories()
       $brand_id = $row['brand_id'];
 
       echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
-            <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px'>
-              <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
-               <div class='card-body'>
-                   <h5 class='card-title'>$product_title</h5>
-                   <p class='card-text'>$description</p>
-                   <p class='card-price'>Price: $product_price</p>
-                   <a href='#' class='btn btn-primary'>Add to Cart</a>
-                   <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-              </div>
-            </div>
-          </div>";
+      <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
+        <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+         <div class='card-body'>
+             <h5 class='card-title'>$product_title</h5>
+             <p class='card-text'>$description</p>
+             <p class='card-price'>Price: $product_price</p>
+             <a href='#' class='btn btn-primary'>Add to Cart</a>
+             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+          </div>
+        </div>
+      </div>";
     }
   }
 }
@@ -182,17 +182,17 @@ function getUniqueBrands()
       $brand_id = $row['brand_id'];
 
       echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
-            <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px'>
-              <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
-               <div class='card-body'>
-                   <h5 class='card-title'>$product_title</h5>
-                   <p class='card-text'>$description</p>
-                   <p class='card-price'>Price: $product_price</p>
-                   <a href='#' class='btn btn-primary'>Add to Cart</a>
-                   <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-                </div>
-            </div>
-          </div>";
+      <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
+        <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+         <div class='card-body'>
+             <h5 class='card-title'>$product_title</h5>
+             <p class='card-text'>$description</p>
+             <p class='card-price'>Price: $product_price</p>
+             <a href='#' class='btn btn-primary'>Add to Cart</a>
+             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+          </div>
+        </div>
+      </div>";
     }
   }
 }
@@ -220,17 +220,17 @@ function searchProduct()
       $brand_id = $row['brand_id'];
 
       echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
-              <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px'>
-                <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
-                 <div class='card-body'>
-                     <h5 class='card-title'>$product_title</h5>
-                     <p class='card-text'>$description</p>
-                     <p class='card-price'>Price: $product_price</p>
-                     <a href='#' class='btn btn-primary'>Add to Cart</a>
-                     <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>                  
-                  </div>
-                </div>
-              </div>";
+      <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
+        <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+         <div class='card-body'>
+             <h5 class='card-title'>$product_title</h5>
+             <p class='card-text'>$description</p>
+             <p class='card-price'>Price: $product_price</p>
+             <a href='#' class='btn btn-primary'>Add to Cart</a>
+             <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+          </div>
+        </div>
+      </div>";
     }
   }
 }
@@ -269,16 +269,17 @@ function viewMore()
                   </div>
                 </div>
               </div>
+              <!-- Related Products-->
             <div class='col-md-8'>
             <div class='row '>
             <div class='col-md-12'>
                 <h2 class='text-center text-light'>Product Images</h2>
             </div>
             <div class='col-md-6'>
-            <img src='./images/$product_image2'  class='card-img-top' alt='$product_title'style='border-radius:20px;'object-fit:contain;'>
+            <img src='./images/$product_image2'  class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:contain;'>
             </div>
             <div class='col-md-6'>
-            <img src='./images/$product_image3' class='card-img-top' alt='$product_title'style='border-radius:20px;'object-fit:contain;'>
+            <img src='./images/$product_image3' class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:contain;'>
             </div>
             </div>
         </div>";
@@ -286,4 +287,23 @@ function viewMore()
       }
     }
   }
+
 }
+function getIPAddress() {  
+  //whether ip is from the share internet  
+   if(!empty($_SERVER['HTTP_CLIENT_IP'])) {  
+              $ip = $_SERVER['HTTP_CLIENT_IP'];  
+      }  
+  //whether ip is from the proxy  
+  elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {  
+              $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];  
+   }  
+//whether ip is from the remote address  
+  else{  
+           $ip = $_SERVER['REMOTE_ADDR'];  
+   }  
+   return $ip;  
+}  
+// $ip = getIPAddress();  
+// echo 'User Real IP Address - '.$ip;  
+?>
