@@ -39,18 +39,16 @@ include('functions/common_function.php')
     }
 
     .navbar form button i:hover {
-      font-size: 20px;
+      font-size: 14px;
     }
 
     .side-nav .navbar-nav .nav-link img {
       object-fit: contain;
     }
 
-    .side-nav .navbar-nav .nav-link img:hover {
-      width: 110px;
-      height: 50px;
-      object-fit: contain;
-      transition: 0.1s;
+    .side-nav .navbar-nav .nav-item:hover {
+      box-shadow: 1px 1px 10px grey;
+      transition: 0.2s;
     }
    
   </style>
@@ -153,7 +151,7 @@ include('functions/common_function.php')
             getProducts();
             viewMore();
           }
-          //it will fetch products from DB and display on homepage
+          //it will fetch products based on category or brand from DB and display on homepage
           getUniqueCategories();
           getUniqueBrands();
           // $ip = getIPAddress();  
