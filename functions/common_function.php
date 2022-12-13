@@ -107,8 +107,8 @@ function getCategories()
     $category_title = $row_data['category_title'];
     $category_id = $row_data['category_id'];
     if ($category_id % 2 != 0) {
-      echo "<li class='nav-item'>
-          <a href='index.php?category=$category_id' class='nav-link text-dark'style='background-color:#E8E8E8;'><h5>$category_title</h5></a>
+      echo "<li class='nav-item'style='background-color:#E8E8E8;'>
+          <a href='index.php?category=$category_id' class='nav-link text-dark'><h5>$category_title</h5></a>
         </li> ";
     } else {
       echo "<li class='nav-item bg-light'>
