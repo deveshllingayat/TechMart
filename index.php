@@ -50,7 +50,13 @@ include('functions/common_function.php')
       box-shadow: 1px 1px 10px grey;
       transition: 0.2s;
     }
-   
+   .card-text{
+    text-align:justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+   }
   </style>
 </head>
 

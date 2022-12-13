@@ -46,12 +46,17 @@ include('functions/common_function.php')
       object-fit: contain;
     }
 
-    .side-nav .navbar-nav .nav-link img:hover {
-      width: 110px;
-      height: 50px;
-      object-fit: contain;
-      transition: 0.1s;
+    .side-nav .navbar-nav .nav-item:hover {
+      box-shadow: 1px 1px 10px grey;
+      transition: 0.2s;
     }
+    .card-text{
+    text-align:justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+   }
   </style>
 </head>
 
