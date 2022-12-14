@@ -22,7 +22,7 @@ function getProducts()
 
         echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
         <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
-          <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+          <img src='./images/product_images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
            <div class='card-body'>
                <h5 class='card-title'>$product_title</h5>
                <p class='card-text'>$description</p>
@@ -59,7 +59,7 @@ function getAllProducts()
 
         echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
         <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
-          <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+          <img src='./images/product_images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
            <div class='card-body'>
                <h5 class='card-title'>$product_title</h5>
                <p class='card-text'>$description</p>
@@ -142,7 +142,7 @@ function getUniqueCategories()
 
       echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
       <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
-        <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+        <img src='./images/product_images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
          <div class='card-body'>
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
@@ -179,7 +179,7 @@ function getUniqueBrands()
 
       echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
       <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
-        <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+        <img src='./images/product_images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
          <div class='card-body'>
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
@@ -215,7 +215,7 @@ function searchProduct()
 
       echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
       <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
-        <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+        <img src='./images/product_images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
          <div class='card-body'>
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
@@ -253,7 +253,7 @@ function viewMore()
 
           echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
               <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
-                <img src='./images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
+                <img src='./images/product_images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
                  <div class='card-body'>
                      <h5 class='card-title'>$product_title</h5>
                      <p class='card-text'>$description</p>
@@ -270,10 +270,10 @@ function viewMore()
                 <h2 class='text-center text-light'>Product Images</h2>
             </div>
             <div class='col-md-6'>
-            <img src='./images/$product_image2'  class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:fill;'>
+            <img src='./images/product_images/$product_image2'  class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:fill;'>
             </div>
             <div class='col-md-6'>
-            <img src='./images/$product_image3' class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:fill;'>
+            <img src='./images/product_images/$product_image3' class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:fill;'>
             </div>
             <div class = 'text-light m-3'>
               <h3 class='text-center'>Product Description</h3>
