@@ -18,28 +18,29 @@ include('functions/common_function.php')
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- CSS FILE-->
   <link rel="stylesheet" href="style.css">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic" rel="stylesheet" /> -->
-<link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
-<style>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
+  <style>
     nav {
       background-color: rgb(60, 60, 60);
-     }
+    }
+
     .navbar .navbar-nav .nav-link {
       color: white;
     }
 
     .navbar .navbar-nav .nav-link:hover {
-      font-size: 18px;
-      transition: 0.2s;
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px white;
+      transition: 0s;
+    }
+
+    .navbar form button i:hover {
+      font-size: 14px;
     }
 
     .nav-item {
       font-family: 'Lato';
       font-size: 16px;
-    }
-
-    .navbar form button i:hover {
-      font-size: 14px;
     }
 
     .side-nav .navbar-nav .nav-link img {
@@ -50,13 +51,22 @@ include('functions/common_function.php')
       box-shadow: 1px 1px 10px grey;
       transition: 0.2s;
     }
-   .card-text{
-    text-align:justify;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-   }
+
+    .card-text {
+      text-align: justify;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    #logo {
+      color: yellow;
+      box-shadow: 1px 1px 10px black;
+      border-radius: 10px;
+      font-family: forte;
+      padding: 3px;
+    }
   </style>
 </head>
 
@@ -65,7 +75,7 @@ include('functions/common_function.php')
     <!--first child-->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <img src="./images/Logo.gif" class="logo">
+        <h4 id="logo">tm</h4>
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -86,7 +96,7 @@ include('functions/common_function.php')
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"><sup>1</sup></i> Cart</a>
+              <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup style="font-size: 14px;"><?php cart_item_no()?></sup> Cart</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Total Price : </a>
@@ -97,7 +107,6 @@ include('functions/common_function.php')
             <input class="form-control ms-2" type="search" name="search_data" placeholder="Search Products" aria-label="Search" style="width:350px;border-radius:8px;">
             <button class="btn btn-outline-none text-light" type="submit" name="search_data_product"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
-          <!-- style="font-family:'Ubuntu';font-size:16px" -->
           <ul class="navbar-nav ms-auto ">
             <li class="nav-item">
               <a class="nav-link" href="#">Welcome Guest</a>
@@ -110,9 +119,10 @@ include('functions/common_function.php')
         </div>
       </div>
     </nav>
-
-
-
+    <!-- calling cart -->
+    <?php
+    cart();
+    ?>
     <!-- third child-->
     <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="true">
       <div class="carousel-indicators" style="filter:invert(60%);">
@@ -170,9 +180,9 @@ include('functions/common_function.php')
       </div>
 
       <!--side nav-->
-      <div class="side-nav col-md-2  p-0 mt-3 mb-4" >
+      <div class="side-nav col-md-2  p-0 mt-3 mb-4" style="background-color:rgb(60, 60, 60);border:1px outset white;">
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item " style="background-color:rgb(60, 60, 60);border:1px outset white;">
+          <li class="nav-item ">
             <a href="#" class="nav-link text-light">
               <h4>Top Brands</h4>
             </a>
@@ -184,7 +194,7 @@ include('functions/common_function.php')
         </ul>
         <!--Categories to be displayed-->
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item " style="background-color:rgb(60, 60, 60);border:1px outset white;">
+          <li class="nav-item ">
             <a href="#" class="nav-link text-light">
               <h4>Categories</h4>
             </a>

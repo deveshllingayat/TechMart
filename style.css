@@ -4,13 +4,7 @@
     box-sizing: border-box;
 
 }
-.logo{
-    width: 3%;
-    height: 3%;
-    border-radius: 20px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
+
 .card-image-top{
     width:100%;
     height:200px;
@@ -18,5 +12,5 @@
 }
 
 body{
-    background-image: url("https://wallpaperaccess.com/full/3492868.gif");
+    background-image: url("images/backgroundImage.gif");
 }
