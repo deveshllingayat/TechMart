@@ -16,8 +16,6 @@ function getProducts()
         $description = $row['product_desc'];
         $product_id = $row['product_id'];
         $product_image1 = $row['product_image1'];
-        //$product_image2= $row['product_image2'];
-        //$product_image3= $row['product_image3'];
         $product_price = $row['product_price'];
         $category_id = $row['category_id'];
         $brand_id = $row['brand_id'];
@@ -29,7 +27,7 @@ function getProducts()
                <h5 class='card-title'>$product_title</h5>
                <p class='card-text'>$description</p>
                <p class='card-price'>Price: $product_price</p>
-               <a href='#' class='btn btn-primary'>Add to Cart</a>
+               <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
             </div>
           </div>
@@ -66,7 +64,7 @@ function getAllProducts()
                <h5 class='card-title'>$product_title</h5>
                <p class='card-text'>$description</p>
                <p class='card-price'>Price: $product_price</p>
-               <a href='#' class='btn btn-primary'>Add to Cart</a>
+               <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
             </div>
           </div>
@@ -83,15 +81,15 @@ function getBrands()
   $result_brands = mysqli_query($con, $select_brands);
   while ($row_data = mysqli_fetch_assoc($result_brands)) {
     $brand_title = $row_data['brand_title'];
-    $brand_url = $row_data['brand_url'];
+    $image_path = $row_data['brand_image_path'];
     $brand_id = $row_data['brand_id'];
     if ($brand_id % 2 != 0) {
       echo "<li class='nav-item'style='background-color:#E8E8E8'>
-              <a href='index.php?brand=$brand_id' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
+              <a href='index.php?brand=$brand_id' class='nav-link '><img src='./images/$image_path'width='40px'height='40px' alt='$brand_title' ></a>
             </li>";
     } else {
       echo "<li class='nav-item bg-light'>
-              <a href='index.php?brand=$brand_id' class='nav-link '><img src='$brand_url'width='40px'height='40px' alt='$brand_title' ></a>
+              <a href='index.php?brand=$brand_id' class='nav-link '><img src='./images/$image_path'width='40px'height='40px' alt='$brand_title' ></a>
             </li>";
     }
   }
@@ -149,7 +147,7 @@ function getUniqueCategories()
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
              <p class='card-price'>Price: $product_price</p>
-             <a href='#' class='btn btn-primary'>Add to Cart</a>
+             <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
         </div>
@@ -175,8 +173,6 @@ function getUniqueBrands()
       $description = $row['product_desc'];
       $product_id = $row['product_id'];
       $product_image1 = $row['product_image1'];
-      // $product_image2= $row['product_image2'];
-      //$product_image3= $row['product_image3'];
       $product_price = $row['product_price'];
       $category_id = $row['category_id'];
       $brand_id = $row['brand_id'];
@@ -188,7 +184,7 @@ function getUniqueBrands()
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
              <p class='card-price'>Price: $product_price</p>
-             <a href='#' class='btn btn-primary'>Add to Cart</a>
+             <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
         </div>
@@ -213,8 +209,6 @@ function searchProduct()
       $description = $row['product_desc'];
       $product_id = $row['product_id'];
       $product_image1 = $row['product_image1'];
-      //$product_image2= $row['product_image2'];
-      //$product_image3= $row['product_image3'];
       $product_price = $row['product_price'];
       $category_id = $row['category_id'];
       $brand_id = $row['brand_id'];
@@ -226,7 +220,7 @@ function searchProduct()
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
              <p class='card-price'>Price: $product_price</p>
-             <a href='#' class='btn btn-primary'>Add to Cart</a>
+             <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
         </div>
@@ -264,8 +258,8 @@ function viewMore()
                      <h5 class='card-title'>$product_title</h5>
                      <p class='card-text'>$description</p>
                      <p class='card-price'>Price: $product_price</p>
-                     <a href='#' class='btn btn-primary'>Add to Cart</a>
-                     <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                     <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
+                     <a href='index.php' class='btn btn-secondary'>Go Home</a>
                   </div>
                 </div>
               </div>
@@ -276,10 +270,14 @@ function viewMore()
                 <h2 class='text-center text-light'>Product Images</h2>
             </div>
             <div class='col-md-6'>
-            <img src='./images/$product_image2'  class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:contain;'>
+            <img src='./images/$product_image2'  class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:fill;'>
             </div>
             <div class='col-md-6'>
-            <img src='./images/$product_image3' class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:contain;'>
+            <img src='./images/$product_image3' class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:fill;'>
+            </div>
+            <div class = 'text-light m-3'>
+              <h3 class='text-center'>Product Description</h3>
+              <p >$description</p>
             </div>
             </div>
         </div>";
@@ -304,6 +302,44 @@ function getIPAddress() {
    }  
    return $ip;  
 }  
+//cart function
+function cart(){
+  global $con;
+  if(isset($_GET['add_to_cart'])){
+    $get_ip = getIPAddress();
+    $get_product_id = $_GET['add_to_cart'];
+    $select_query = "Select * from `cart_details` where ip_address ='$get_ip' and product_id = $get_product_id";
+    $result_query = mysqli_query($con,$select_query);
+    $no_of_rows = mysqli_num_rows($result_query);
+    if ($no_of_rows > 0) {
+      echo "<script>alert('Item already present inside the cart!');</script>";
+      echo "<script>window.open('index.php','_self');</script>";
+    }else{
+      $insert_query = "insert into `cart_details` (product_id,ip_address,quantity) values ($get_product_id,'$get_ip',0)";
+      $result_query = mysqli_query($con,$insert_query);
+      echo "<script>alert('Item is added to cart')</script>";
+      echo"<script>window.open('index.php','_self')</script>;";
+    }
+  }
+}
 // $ip = getIPAddress();  
 // echo 'User Real IP Address - '.$ip;  
+
+//cart items
+function cart_item_no(){
+  global $con;
+  if(isset($_GET['add_to_cart'])){
+    $get_ip = getIPAddress();
+    $select_query = "Select * from `cart_details` where ip_address ='$get_ip'";
+    $result_query = mysqli_query($con,$select_query);
+    $count_items = mysqli_num_rows($result_query);
+  }else{
+      $get_ip = getIPAddress();
+      $select_query = "Select * from `cart_details` where ip_address ='$get_ip'";
+      $result_query = mysqli_query($con,$select_query);
+      $count_items = mysqli_num_rows($result_query);
+    }
+    echo $count_items;
+  }
+  
 ?>
