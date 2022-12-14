@@ -31,7 +31,7 @@
 </div>
 <div class="input-group w-90 mb-3">
 <span class="input-group-text" id="basic-addon1"style="background-color:silver ;"><i class="fa-solid fa-receipt"></i></span>
-  <input type="text" class="form-control" name = "brand_url"placeholder="Image URL"  required/>
+  <input type="text" class="form-control" name = "brand_image_path"placeholder="File Name Logo"  required/>
 </div>
 <div class="input-group w-10  m-auto"style="display:flex;justify-content:center;">
 <input type="submit" class="bg-primary text-light p-2 mb-2 border-0 "style="border-radius:15px;" name = "insert_brand"value="Insert Brand" required/>  

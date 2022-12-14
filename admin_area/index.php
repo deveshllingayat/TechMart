@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- css file-->
     <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
     <style>
         .admin_img{
             width:100px;
@@ -26,30 +27,41 @@
             color:white;
         }
         .navbar .navbar .navbar-nav .nav-link:hover{
-           font-size:18px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px black;
+            transition: 0.2s;
         }
         .button .btn{
             font-size:24px;
-            font-family:'Trebuchet MS';
-            color: black;
-            background-color:#F0F0F0;
+            font-family:'Lato';
+            color: white;
+            background:transparent;
+            box-shadow: 1px 1px 4px white;
         }
         .button .btn :hover{
-            color:blue;
+            color:darkgrey;
+        }
+        #logo{
+        color:yellow;
+        background-color: black;
+        box-shadow:1px 1px 10px black;
+        border-radius:10px;
+        font-family:forte;
+        padding:3px;
         }
     </style>
 </head>
 <body>
     <div class="container-fluid p-0 m-0">
         <!--first child-->
-        <nav class="navbar navbar-expand-lg navbar-light "style="background-color:darkblue;">
+        <nav class="navbar navbar-expand-lg navbar-light "style="background-color:#3B71CA;">
             <div class="container-fluid">
-                <img src="../images/Logo.gif" alt="Logo" class="logo">
-                <h3 class="text-center text-light p-2s"style="font-family:'Trebuchet MS';">TechMart Admin Panel</h3>
+            <h4 id="logo">tm</h4>
+                <h3 class="text-center text-light p-2s"style="font-family:'Lato';font-size:40px;">TechMart Admin Panel</h3>
                 <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav " >
                         <li class="navbar-item ">
-                        <a href="" class="nav-link">Welcome Guest</a>
+                        <a href="" class="nav-link text-light">Welcome Guest</a>
                         </li>
 
                     </ul>
@@ -135,7 +147,7 @@
     </div>
 
 
-    <div class="p-2 text-center footer" style="background-color:darkblue;font-family:'Candara';color:white;font-size:20px"><i class="fa-regular fa-copyright"></i> All Rights Reserved by TechMart</div>
+    <div class="p-2 text-center footer" style="background-color:#3B71CA;font-family:'Lato';color:white;font-size:20px"><i class="fa-regular fa-copyright"></i> All Rights Reserved by TechMart</div>
 
 <!-- Bootstrap js link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
