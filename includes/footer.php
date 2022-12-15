@@ -1,1 +1,1 @@
-<div class="p-3 text-center" style="font-family:'Lato';background-color:rgb(60, 60, 60);color:white;font-size:20px;border-top:1px inset white;"><i class="fa-regular fa-copyright"></i> All Rights Reserved by TechMart</div>
+<div class="p-3 text-center" style="font-family:'Lato';background-color:rgb(50, 50, 50);color:white;font-size:20px;border-top:1px inset white;"><i class="fa-regular fa-copyright"></i> All Rights Reserved by TechMart</div>
