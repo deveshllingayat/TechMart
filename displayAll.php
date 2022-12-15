@@ -21,7 +21,7 @@ include('functions/common_function.php')
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
   <style>
     nav {
-      background-color: rgb(60, 60, 60);
+      background-color: rgb(50,50,50);
     }
 
     .navbar .navbar-nav .nav-link {
@@ -94,10 +94,10 @@ include('functions/common_function.php')
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup style="font-size: 14px;"><?php cart_item_no()?></sup> Cart</a>
+              <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup style="font-size: 14px;"><?php cart_item_no() ?></sup> Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Total Price : </a>
+              <a class="nav-link" href="#">Cart Value : <?php total_cart_price() ?>/-</a>
             </li>
           </ul>
           <form class="d-flex ms-auto" method="get">
@@ -175,9 +175,9 @@ include('functions/common_function.php')
       </div>
 
       <!--side nav-->
-      <div class="side-nav col-md-2  p-0 mt-3 mb-4">
+      <div class="side-nav col-md-2  p-0 mt-3 mb-4"style="background-color:rgb(50,50,50);border:1px outset white;">
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item " style="background-color:rgb(60, 60, 60);border:1px outset white;">
+          <li class="nav-item " >
             <!-- Brands to be displayed -->
             <a href="#" class="nav-link text-light">
               <h4>Top Brands</h4>
@@ -189,7 +189,7 @@ include('functions/common_function.php')
         </ul>
         <!--Categories to be displayed-->
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item " style="background-color:rgb(60, 60, 60);border:1px outset white;">
+          <li class="nav-item " >
             <a href="#" class="nav-link text-light">
               <h4>Categories</h4>
             </a>
