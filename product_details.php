@@ -21,7 +21,7 @@ include('functions/common_function.php')
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
   <style>
     nav {
-      background-color: rgb(50,50,50);
+      background-color: rgb(50, 50, 50);
     }
 
     .navbar .navbar-nav .nav-link {
@@ -31,6 +31,7 @@ include('functions/common_function.php')
     .navbar .navbar-nav .nav-link:hover {
       border-radius: 10px;
       box-shadow: 1px 1px 5px white;
+      transition: 0s;
     }
 
     .navbar form button i:hover {
@@ -47,7 +48,7 @@ include('functions/common_function.php')
     }
 
     .side-nav .navbar-nav .nav-item:hover {
-      box-shadow: 1px 1px 10px grey;
+      opacity: 80%;
       transition: 0.2s;
     }
 
@@ -97,7 +98,7 @@ include('functions/common_function.php')
               <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup style="font-size: 14px;"><?php cart_item_no() ?></sup> Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cart Value : <?php total_cart_price() ?>/-</a>
+              <a class="nav-link" href="#">Cart Value : <?php echo total_cart_price() ?></a>
             </li>
           </ul>
           <form class="d-flex ms-auto" method="get">
@@ -176,7 +177,7 @@ include('functions/common_function.php')
       <!--side nav-->
       <div class="side-nav col-md-2  p-0 mt-3 mb-4"style="background-color:rgb(50,50,50);border:1px outset white;">
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item " >
+          <li class="nav-item "style="pointer-events:none" >
             <!-- Brands to be displayed -->
             <a href="#" class="nav-link text-light">
               <h4>Top Brands</h4>
@@ -188,7 +189,7 @@ include('functions/common_function.php')
         </ul>
         <!--Categories to be displayed-->
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item ">
+          <li class="nav-item "style="pointer-events:none">
             <a href="#" class="nav-link text-light">
               <h4>Categories</h4>
             </a>
