@@ -20,18 +20,20 @@ include('functions/common_function.php')
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
   <style>
-    nav {
+      nav {
       background-color: rgb(50, 50, 50);
     }
-
+  
     .navbar .navbar-nav .nav-link {
       color: white;
+      border-radius: 10px;
     }
 
     .navbar .navbar-nav .nav-link:hover {
-      border-radius: 10px;
-      box-shadow: 1px 1px 5px white;
-      transition: 0s;
+      color:black;
+      background-color: whitesmoke;
+      animation:nav 2s infinite;
+      transition: 0.4s;
     }
 
     .navbar form button i:hover {
@@ -45,11 +47,13 @@ include('functions/common_function.php')
 
     .side-nav .navbar-nav .nav-link img {
       object-fit: contain;
+      
     }
 
     .side-nav .navbar-nav .nav-item:hover {
+      letter-spacing: 1px;
       opacity: 80%;
-      transition: 0.2s;
+      transition: 0.2s linear;
     }
 
     .card-text {
@@ -66,6 +70,11 @@ include('functions/common_function.php')
       border-radius: 10px;
       font-family: forte;
       padding: 3px;
+      animation: logo 4s ease infinite;
+    }
+    .navbar-toggler-icon{
+      background-color:white;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -95,10 +104,10 @@ include('functions/common_function.php')
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup style="font-size: 14px;"><?php cart_item_no() ?></sup> Cart</a>
+              <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup style="font-size: 14px;"><?php cart_item_no() ?></sup> Cart</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cart Value : <?php echo total_cart_price() ?></a>
+            <li class="nav-item" style="pointer-events: none;">
+              <a class="nav-link" href="#">Cart Value : &#x20B9; <?php echo total_cart_price() ?></a>
             </li>
           </ul>
           <form class="d-flex ms-auto" method="get">

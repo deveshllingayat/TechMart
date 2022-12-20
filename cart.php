@@ -172,6 +172,7 @@ include('functions/common_function.php')
                                         $product_title = $row_product_price['product_title'];
                                         $product_image1 = $row_product_price['product_image1'];
                                         $product_values = array_sum($product_price);
+                                        
                             ?>
                                         <tr>
                                             <td><?php echo $product_title ?></td>
@@ -214,7 +215,7 @@ include('functions/common_function.php')
                                 echo "<div class='d-flex justify-content-center align-items-center'>
                                 <h5 class='h5 px-3 text-light '>Subtotal:$total/- </h5>
                                 <input type='submit'value='Continue Shopping' class='btn btn-primary text-light m-2 p-2 'name='continue_shopping'>
-                                <a href='#'><button type='submit' class='btn btn-primary text-light m-2 p-2 '>Checkout</button></a>
+                                <input type='submit' class='btn btn-primary text-light m-2 p-2 'value='Checkout'name='Checkout_btn'>
                             </div>";
                             }else{
                                 echo "<div class='d-flex justify-content-center align-items-center'>
@@ -223,6 +224,9 @@ include('functions/common_function.php')
                             }
                             if(isset($_POST['continue_shopping'])){
                                 echo"<script>window.open('index.php','_self')</script>";
+                            }
+                            if(isset($_POST['Checkout_btn'])){
+                                echo"<script>window.open('checkout.php','_self')</script>";
                             }
                         ?>
 

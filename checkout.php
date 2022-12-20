@@ -1,7 +1,6 @@
 <!-- connect file-->
 <?php
 include('includes/connect.php');
-include('functions/common_function.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +9,7 @@ include('functions/common_function.php')
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechMart</title>
+  <title>TechMart - Checkout Page</title>
   <!-- Bootstrap CSS link-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
@@ -104,12 +103,7 @@ include('functions/common_function.php')
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup style="font-size: 14px;"><?php cart_item_no() ?></sup> Cart</a>
-            </li>
-            <li class="nav-item" style="pointer-events:none">
-              <a class="nav-link" href="#">Cart Value : &#x20B9; <?php echo total_cart_price() ?>/-</a>
-            </li>
+           
           </ul>
 
           <form class="d-flex ms-auto" method="get">
@@ -128,93 +122,25 @@ include('functions/common_function.php')
         </div>
       </div>
     </nav>
-    <!-- calling cart -->
-    <?php
-    cart();
-    ?>
-    <!-- third child-->
-    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="true">
-      <div class="carousel-indicators" style="filter:invert(60%);">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./images/Slide1.jpg" class="d-block w-100 " alt="Mobiles & Tablets" style="height:250px;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Slide2.jpg" class="d-block w-100 " alt="Laptops" style="height:250px;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Slide3.jpg" class="d-block w-100 " alt="Audio & Accessories" style="height:250px;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Slide4.jpg" class="d-block w-100 " alt="Televisions" style="height:250px;">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" style="filter:invert(100%);" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" style="filter:invert(100%);" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <!-- fourth child-->
+ 
+  
+   
+    
     <div class="row px-1">
-      <div class="col-md-10 mt-2 ">
-        <!--Products-->
+      <div class="col-md-12 mt-2 ">
+    
         <div class="row  ">
-          <!-- fetching products-->
-          <?php
-          if (isset($_GET['search_data_product'])) {
-            searchProduct();
-          } else {
-            getProducts();
-            viewMore();
-          }
-          //it will fetch products based on category or brand from DB and display on homepage
-          getUniqueCategories();
-          getUniqueBrands();
-          // $ip = getIPAddress();  
-          // echo 'User Real IP Address - '.$ip;  
-          ?>
+        <?php 
+            if(!isset($_SESSION['username'])){
+                include('users_area/userLogin.php');
+            }else{
+                include('payment.php');
+            }
 
-          <!--row end-->
-        </div>
-        <!--column end-->
-      </div>
-
-      <!--side nav-->
-      <div class="side-nav col-md-2  p-0 mt-3 mb-4" style="background-color:rgb(50,50,50);border:1px outset white;">
-        <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item "style="pointer-events:none;">
-            <a href="#" class="nav-link text-light">
-              <h4>Top Brands</h4>
-            </a>
-          </li>
-          <!-- Brands to be displayed -->
-          <?php
-          getBrands();
-          ?>
-        </ul>
-        <!--Categories to be displayed-->
-        <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item "style="pointer-events:none;">
-            <a href="#" class="nav-link text-light">
-              <h4>Categories</h4>
-            </a>
-          </li>
-          <?php
-          getCategories();
-          ?>
-        </ul>
+        ?>         
       </div>
     </div>
-    <!-- large row end-->
+   
   </div>
 
   <?php
