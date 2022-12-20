@@ -26,7 +26,7 @@ function getProducts()
            <div class='card-body'>
                <h5 class='card-title'>$product_title</h5>
                <p class='card-text'>$description</p>
-               <p class='card-price'>Price: $product_price</p>
+               <p class='card-price'>Price: &#x20B9; $product_price</p>
                <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
             </div>
@@ -63,7 +63,7 @@ function getAllProducts()
            <div class='card-body'>
                <h5 class='card-title'>$product_title</h5>
                <p class='card-text'>$description</p>
-               <p class='card-price'>Price: $product_price</p>
+               <p class='card-price'>Price: &#x20B9; $product_price</p>
                <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
             </div>
@@ -81,15 +81,15 @@ function getBrands()
   $result_brands = mysqli_query($con, $select_brands);
   while ($row_data = mysqli_fetch_assoc($result_brands)) {
     $brand_title = $row_data['brand_title'];
-    $image_path = $row_data['brand_image_path'];
+    $brand_logo = $row_data['brand_logo'];
     $brand_id = $row_data['brand_id'];
     if ($brand_id % 2 != 0) {
       echo "<li class='nav-item'style='background-color:#E8E8E8'>
-              <a href='index.php?brand=$brand_id' class='nav-link '><img src='./images/$image_path'width='40px'height='40px' alt='$brand_title' ></a>
+              <a href='index.php?brand=$brand_id' class='nav-link '><img src='./images/$brand_logo'width='40px'height='40px' alt='$brand_title' ></a>
             </li>";
     } else {
       echo "<li class='nav-item bg-light'>
-              <a href='index.php?brand=$brand_id' class='nav-link '><img src='./images/$image_path'width='40px'height='40px' alt='$brand_title' ></a>
+              <a href='index.php?brand=$brand_id' class='nav-link '><img src='./images/$brand_logo'width='40px'height='40px' alt='$brand_title' ></a>
             </li>";
     }
   }
@@ -146,7 +146,7 @@ function getUniqueCategories()
          <div class='card-body'>
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
-             <p class='card-price'>Price: $product_price</p>
+             <p class='card-price'>Price: &#x20B9; $product_price</p>
              <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
@@ -166,7 +166,7 @@ function getUniqueBrands()
     $result_query = mysqli_query($con, $select_query);
     $no_of_rows = mysqli_num_rows($result_query);
     if ($no_of_rows == 0) {
-      echo "<h2 style='font-family:Trebuchet MS;color:white;text-align:center;'>This brand is not available for service!</h2>";
+      echo "<h2 style='font-family:Lato;color:white;text-align:center;'>This brand is not available for service!</h2>";
     }
     while ($row = mysqli_fetch_assoc($result_query)) {
       $product_title = $row['product_title'];
@@ -183,7 +183,7 @@ function getUniqueBrands()
          <div class='card-body'>
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
-             <p class='card-price'>Price: $product_price</p>
+             <p class='card-price'>Price: &#x20B9; $product_price</p>
              <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
@@ -202,7 +202,7 @@ function searchProduct()
     $result_query = mysqli_query($con, $search_query);
     $no_of_rows = mysqli_num_rows($result_query);
     if ($no_of_rows == 0) {
-      echo "<h2 style='font-family:Trebuchet MS;color:white;text-align:center;'>No Products Available!</h2>";
+      echo "<h2 style='font-family:Lato;color:white;text-align:center;'>No Products Available!</h2>";
     }
     while ($row = mysqli_fetch_assoc($result_query)) {
       $product_title = $row['product_title'];
@@ -219,7 +219,7 @@ function searchProduct()
          <div class='card-body'>
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
-             <p class='card-price'>Price: $product_price</p>
+             <p class='card-price'>Price: &#x20B9; $product_price</p>
              <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
@@ -257,7 +257,7 @@ function viewMore()
                  <div class='card-body'>
                      <h5 class='card-title'>$product_title</h5>
                      <p class='card-text'>$description</p>
-                     <p class='card-price'>Price: $product_price</p>
+                     <p class='card-price'>Price: &#x20B9; $product_price</p>
                      <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
                      <a href='index.php' class='btn btn-secondary'>Go Home</a>
                   </div>
@@ -349,15 +349,20 @@ function cart_item_no(){
     $cart_query = "Select * from `cart_details` where ip_address = '$get_ip'";
     $result = mysqli_query($con,$cart_query);
     while($row = mysqli_fetch_array($result)){
+      if($row['quantity']==0) {
+        $qty=$row['quantity']+1;
+      }else {
+        $qty = $row['quantity'];
+      }
       $product_id = $row['product_id'];
       $select_products = "Select * from `products` where product_id = $product_id";
       $result_products = mysqli_query($con,$select_products);
       while($row_product_price = mysqli_fetch_array($result_products)){
         $product_price = array($row_product_price['product_price']);
         $product_values = array_sum($product_price);
-        $total_price += $product_values;
+        $total_price += $product_values*$qty;
       }
     }
-    echo $total_price;
+    return $total_price;
   }
 ?>
