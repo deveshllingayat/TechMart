@@ -20,19 +20,18 @@ include('functions/common_function.php')
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
   <style>
-      nav {
+    nav {
       background-color: rgb(50, 50, 50);
     }
-  
+
     .navbar .navbar-nav .nav-link {
       color: white;
       border-radius: 10px;
     }
 
     .navbar .navbar-nav .nav-link:hover {
-      color:black;
+      color: black;
       background-color: whitesmoke;
-      animation:nav 2s infinite;
       transition: 0.4s;
     }
 
@@ -47,7 +46,7 @@ include('functions/common_function.php')
 
     .side-nav .navbar-nav .nav-link img {
       object-fit: contain;
-      
+
     }
 
     .side-nav .navbar-nav .nav-item:hover {
@@ -70,11 +69,16 @@ include('functions/common_function.php')
       border-radius: 10px;
       font-family: forte;
       padding: 3px;
-      animation: logo 4s ease infinite;
+      cursor: pointer;
     }
+
+    #logo:hover {
+      box-shadow: 1px 1px 5px white;
+    }
+
     .navbar-toggler-icon{
-      background-color:white;
-      border-radius: 5px;
+      background:transparent;
+      filter: invert(100%);
     }
   </style>
 </head>
@@ -119,7 +123,7 @@ include('functions/common_function.php')
               <a class="nav-link" href="#">Welcome Guest</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="users_area/userLogin.php">Login</a>
             </li>
           </ul>
         </div>
@@ -184,9 +188,9 @@ include('functions/common_function.php')
       </div>
 
       <!--side nav-->
-      <div class="side-nav col-md-2  p-0 mt-3 mb-4"style="background-color:rgb(50,50,50);border:1px outset white;">
+      <div class="side-nav col-md-2  p-0 mt-3 mb-4" style="background-color:rgb(50,50,50);border:1px outset white;">
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item "style="pointer-events:none" >
+          <li class="nav-item " style="pointer-events:none">
             <!-- Brands to be displayed -->
             <a href="#" class="nav-link text-light">
               <h4>Top Brands</h4>
@@ -198,7 +202,7 @@ include('functions/common_function.php')
         </ul>
         <!--Categories to be displayed-->
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item "style="pointer-events:none">
+          <li class="nav-item " style="pointer-events:none">
             <a href="#" class="nav-link text-light">
               <h4>Categories</h4>
             </a>

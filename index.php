@@ -32,7 +32,6 @@ include('functions/common_function.php')
     .navbar .navbar-nav .nav-link:hover {
       color:black;
       background-color: whitesmoke;
-      animation:nav 2s infinite;
       transition: 0.4s;
     }
 
@@ -70,11 +69,14 @@ include('functions/common_function.php')
       border-radius: 10px;
       font-family: forte;
       padding: 3px;
-      animation: logo 4s ease infinite;
+      cursor: pointer ;
+    }
+    #logo:hover{
+      box-shadow: 1px 1px 5px white;
     }
     .navbar-toggler-icon{
-      background-color:white;
-      border-radius: 5px;
+      filter: invert(100%);
+      background-color:transparent;
     }
   </style>
 </head>
@@ -121,7 +123,7 @@ include('functions/common_function.php')
               <a class="nav-link" href="#">Welcome Guest</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="users_area/userLogin.php">Login</a>
             </li>
           </ul>
 

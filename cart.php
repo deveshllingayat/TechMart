@@ -1,6 +1,6 @@
 <!-- connect file-->
 <?php
-include('includes/connect.php');
+include('./includes/connect.php');
 include('functions/common_function.php')
 ?>
 <!DOCTYPE html>
@@ -26,12 +26,13 @@ include('functions/common_function.php')
 
         .navbar .navbar-nav .nav-link {
             color: white;
+            border-radius: 10px;
         }
 
         .navbar .navbar-nav .nav-link:hover {
-            border-radius: 10px;
-            box-shadow: 1px 1px 5px white;
-            transition: 0s;
+            color: black;
+            background-color: whitesmoke;
+            transition: 0.4s;
         }
 
         .navbar form button i:hover {
@@ -68,6 +69,11 @@ include('functions/common_function.php')
             padding: 3px;
         }
 
+        #logo:hover {
+            box-shadow: 1px 1px 5px white;
+            cursor: pointer;
+        }
+
         .btn {
             border-radius: 10px;
 
@@ -84,6 +90,10 @@ include('functions/common_function.php')
         #btn_removeP:hover {
             background-color: #b22222;
         }
+        .navbar-toggler-icon{
+      background:transparent;
+      filter: invert(100%);
+    }
     </style>
 </head>
 
@@ -127,7 +137,7 @@ include('functions/common_function.php')
                             <a class="nav-link" href="#">Welcome Guest</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
+                            <a class="nav-link" href="users_area/userLogin.php">Login</a>
                         </li>
                     </ul>
 
@@ -161,9 +171,9 @@ include('functions/common_function.php')
                             </thead>";
                                 while ($row = mysqli_fetch_array($result)) {
                                     $product_id = $row['product_id'];
-                                    if($row['quantity']==0){
-                                        $qty = $row['quantity']+1;
-                                    }else $qty = $row['quantity'];
+                                    if ($row['quantity'] == 0) {
+                                        $qty = $row['quantity'] + 1;
+                                    } else $qty = $row['quantity'];
                                     $select_products = "Select * from `products` where product_id = $product_id";
                                     $result_products = mysqli_query($con, $select_products);
                                     while ($row_product_price = mysqli_fetch_array($result_products)) {
@@ -172,7 +182,7 @@ include('functions/common_function.php')
                                         $product_title = $row_product_price['product_title'];
                                         $product_image1 = $row_product_price['product_image1'];
                                         $product_values = array_sum($product_price);
-                                        
+
                             ?>
                                         <tr>
                                             <td><?php echo $product_title ?></td>
@@ -187,7 +197,7 @@ include('functions/common_function.php')
                                             }
                                             ?>
 
-                                            <td><input type="number" min="1" max="100"value="<?php echo$qty?>" name="quantity[<?php echo $product_id ?>]" id="qty_input" ></td>
+                                            <td><input type="number" min="1" max="100" value="<?php echo $qty ?>" name="quantity[<?php echo $product_id ?>]" id="qty_input"></td>
                                             <td><?php echo $price_table ?></td>
                                             <td><input type="checkbox" name="remove_item[]" value="<?php echo $product_id ?>"></td>
                                             <td>
@@ -198,37 +208,37 @@ include('functions/common_function.php')
                             <?php
                                     }
                                 }
-                            }else{
+                            } else {
                                 echo "<h3 class='text-center text-light'>Cart is empty!</h3>";
                             }
                             ?>
                         </tbody>
                     </table>
                     <!-- Subtotal -->
-                    <?php 
-                            $get_ip = getIPAddress();
-                            $cart_query = "Select * from `cart_details` where ip_address = '$get_ip'";
-                            $result = mysqli_query($con, $cart_query);
-                            $result_count = mysqli_num_rows($result);
-                            $total = total_cart_price();
-                            if($result_count>0){
-                                echo "<div class='d-flex justify-content-center align-items-center'>
+                    <?php
+                    $get_ip = getIPAddress();
+                    $cart_query = "Select * from `cart_details` where ip_address = '$get_ip'";
+                    $result = mysqli_query($con, $cart_query);
+                    $result_count = mysqli_num_rows($result);
+                    $total = total_cart_price();
+                    if ($result_count > 0) {
+                        echo "<div class='d-flex justify-content-center align-items-center'>
                                 <h5 class='h5 px-3 text-light '>Subtotal:$total/- </h5>
                                 <input type='submit'value='Continue Shopping' class='btn btn-primary text-light m-2 p-2 'name='continue_shopping'>
                                 <input type='submit' class='btn btn-primary text-light m-2 p-2 'value='Checkout'name='Checkout_btn'>
                             </div>";
-                            }else{
-                                echo "<div class='d-flex justify-content-center align-items-center'>
+                    } else {
+                        echo "<div class='d-flex justify-content-center align-items-center'>
                                 <input type='submit'value='Continue Shopping' class='btn btn-primary text-light m-2 p-2 'name='continue_shopping'>
                             </div>";
-                            }
-                            if(isset($_POST['continue_shopping'])){
-                                echo"<script>window.open('index.php','_self')</script>";
-                            }
-                            if(isset($_POST['Checkout_btn'])){
-                                echo"<script>window.open('checkout.php','_self')</script>";
-                            }
-                        ?>
+                    }
+                    if (isset($_POST['continue_shopping'])) {
+                        echo "<script>window.open('index.php','_self')</script>";
+                    }
+                    if (isset($_POST['Checkout_btn'])) {
+                        echo "<script>window.open('users_area/checkout.php','_self')</script>";
+                    }
+                    ?>
 
             </div>
         </div>
@@ -246,7 +256,7 @@ include('functions/common_function.php')
                         echo "<script>window.open('cart.php','_self');</script>";
                     }
                 }
-            }
+            }   
         }
         echo $remove_item = remove_cart_item();
         ?>
