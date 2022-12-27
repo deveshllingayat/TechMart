@@ -1,6 +1,5 @@
 <?php
-//including connect.php
-include('./includes/connect.php');
+
 //displaying random products on home page
 function getProducts()
 {
