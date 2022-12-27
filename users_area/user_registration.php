@@ -1,3 +1,7 @@
+<?php 
+include('../includes/connect.php');
+include('../functions/common_function.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +29,7 @@
             padding: 5px;
             border-radius: 15px;
         }
+
         form div {
             margin: 20px;
         }
@@ -37,9 +42,9 @@
 
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-lg-12 col-xl-6">
-                <form action="" method="post" enctype="multipart/formdata">
+                <form action="" method="post" enctype="multipart/form-data">
                     <h2 class="text-center m-3">
-                        New User Registration
+                         User Registration
                     </h2>
                     <!-- Username field  -->
                     <div class="form-outline my-3">
@@ -54,7 +59,7 @@
                     <!-- Image field  -->
                     <div class="form-outline my-3">
                         <label for="user_image" class="form-label">User Image</label>
-                        <input type="file" size="50" id="user_image" name="user_image" class="form-control" required />
+                        <input type="file"  id="user_image" name="user_image" class="form-control" required />
                     </div>
                     <!-- Password field  -->
                     <div class="form-outline my-3">
@@ -76,8 +81,8 @@
                         <input type="text" id="user_contact" name="user_contact" class="form-control" placeholder="Enter your mobile number" autocomplete="off" required />
                     </div>
                     <div class="text-center my-4">
-                        <input type="submit" value="Register" name="user_register" class="btn bg-primary text-light p-2 mb-2" style="border-radius: 10px;">
-                        <p class="small fw-bold">Already have an account ? <a href="userLogin.php" style="text-decoration:none;">Login</a></p>
+                        <input type="submit" value="Register" name="user_register" class="btn bg-primary text-light p-2 mb-3" style="border-radius: 10px;">
+                        <p class="small fw-bold">Already have an account ? <a href="userLogin.php" style="text-decoration:none;color:orangered;">Login</a></p>
                     </div>
                 </form>
             </div>
@@ -86,3 +91,29 @@
 </body>
 
 </html>
+<?php 
+if(isset($_POST['user_register'])){
+    $user_username = $_POST['user_username'];
+    $user_email = $_POST['user_email'];
+    
+    $user_image = $_FILES['user_image']['name'];
+    $user_image_temp = $_FILES['user_image']['tmp_name'];
+    move_uploaded_file($user_image_temp,"users_images/$user_image");
+
+    $user_password = $_POST['user_password'];
+    $confirm_password = $_POST['confirm_password'];
+    $user_address = $_POST['user_address'];
+    $user_contact = $_POST['user_contact'];
+    $user_ip = getIPAddress();
+    //insert query
+    $insert_query = "insert into `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_contact) values('$user_username','$user_email','$user_password','$user_image','$user_ip','$user_address','$user_contact')";
+    $sql_execute = mysqli_query($con,$insert_query);
+ 
+    if($sql_execute){
+        echo"<script>alert('Registered successfully!');</script>";
+    }else{
+        die(mysqli_errno($con));
+    }
+    
+}
+?>
