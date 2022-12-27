@@ -249,14 +249,20 @@ include('functions/common_function.php')
         {
             global $con;
             if (isset($_POST['remove_cart'])) {
-                foreach ($_POST['remove_item'] as $remove_id) {
-                    $delete_query = "Delete from `cart_details` where product_id = '$remove_id'";
-                    $run_delete = mysqli_query($con, $delete_query);
-                    if ($run_delete) {
-                        echo "<script>window.open('cart.php','_self');</script>";
+                if(empty($_POST['remove_item'])){
+                    echo "<script>alert('Please Select the products');</script>";
+                }else{
+                    foreach ($_POST['remove_item'] as $remove_id) {
+                        $delete_query = "Delete from `cart_details` where product_id = '$remove_id'";
+                        $run_delete = mysqli_query($con, $delete_query);
+                        if ($run_delete) {
+                            echo "<script>window.open('cart.php','_self');</script>";
+                        }
                     }
                 }
-            }   
+                
+            } 
+            
         }
         echo $remove_item = remove_cart_item();
         ?>
