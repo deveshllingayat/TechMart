@@ -101,6 +101,8 @@ if(isset($_POST['user_register'])){
     move_uploaded_file($user_image_temp,"users_images/$user_image");
 
     $user_password = $_POST['user_password'];
+    $hash_password = password_hash($user_password,PASSWORD_DEFAULT);
+
     $confirm_password = $_POST['confirm_password'];
     $user_address = $_POST['user_address'];
     $user_contact = $_POST['user_contact'];
@@ -114,9 +116,9 @@ if(isset($_POST['user_register'])){
     }else if($user_password != $confirm_password){
         echo"<script>alert('Passwords do not match!');</script>";
     }
-    
     else{
-        $insert_query = "insert into `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_contact) values('$user_username','$user_email','$user_password','$user_image','$user_ip','$user_address','$user_contact')";
+         //insert query
+        $insert_query = "insert into `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_contact) values('$user_username','$user_email','$hash_password','$user_image','$user_ip','$user_address','$user_contact')";
         $sql_execute = mysqli_query($con,$insert_query);
      
         if($sql_execute){
@@ -125,8 +127,18 @@ if(isset($_POST['user_register'])){
             die(mysqli_errno($con));
         }
     }
-    //insert query
-    
+   
+    //selecting cart items
+    $select_cart_items = "Select * from `cart_details` where ip_address = '$user_ip'";
+    $result_cart = mysqli_query($con,$select_cart_items);
+    $rows_count = mysqli_num_rows($result_cart);
+    if($rows_count>0){
+        $_SESSION['username'] = $user_username;
+        echo"<script>alert('You have items in your cart!');</script>";
+        echo "<script>window.open('checkout.php','_self');</script>";
+    }else{
+        echo"<script>window.open('../index.php','_self');</script>";
+    }
     
 }
 ?>
