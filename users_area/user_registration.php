@@ -105,15 +105,28 @@ if(isset($_POST['user_register'])){
     $user_address = $_POST['user_address'];
     $user_contact = $_POST['user_contact'];
     $user_ip = getIPAddress();
-    //insert query
-    $insert_query = "insert into `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_contact) values('$user_username','$user_email','$user_password','$user_image','$user_ip','$user_address','$user_contact')";
-    $sql_execute = mysqli_query($con,$insert_query);
- 
-    if($sql_execute){
-        echo"<script>alert('Registered successfully!');</script>";
-    }else{
-        die(mysqli_errno($con));
+    //select query
+    $select_query = "Select * from `user_table` where username = '$user_username' or user_email= '$user_email'";
+    $result = mysqli_query($con,$select_query);
+    $rows_count = mysqli_num_rows($result);
+    if($rows_count>0){
+        echo"<script>alert('Username or Email already exists!');</script>";
+    }else if($user_password != $confirm_password){
+        echo"<script>alert('Passwords do not match!');</script>";
     }
+    
+    else{
+        $insert_query = "insert into `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_contact) values('$user_username','$user_email','$user_password','$user_image','$user_ip','$user_address','$user_contact')";
+        $sql_execute = mysqli_query($con,$insert_query);
+     
+        if($sql_execute){
+            echo"<script>alert('Registered successfully!');</script>";
+        }else{
+            die(mysqli_errno($con));
+        }
+    }
+    //insert query
+    
     
 }
 ?>
