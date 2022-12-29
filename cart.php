@@ -1,7 +1,8 @@
 <!-- connect file-->
 <?php
 include('./includes/connect.php');
-include('functions/common_function.php')
+include('functions/common_function.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +21,10 @@ include('functions/common_function.php')
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
     <style>
+        body {
+            overflow-x: hidden;
+        }
+
         nav {
             background-color: rgb(50, 50, 50);
         }
@@ -90,10 +95,12 @@ include('functions/common_function.php')
         #btn_removeP:hover {
             background-color: #b22222;
         }
-        .navbar-toggler-icon{
-      background:transparent;
-      filter: invert(100%);
-    }
+
+        .navbar-toggler-icon {
+            filter: invert(100%);
+            background: transparent;
+
+        }
     </style>
 </head>
 
@@ -105,7 +112,7 @@ include('functions/common_function.php')
                 <h4 id="logo">tm</h4>
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -117,7 +124,7 @@ include('functions/common_function.php')
                             <a class="nav-link" href="displayAll.php">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
+                            <a class="nav-link" href="users_area/user_registration.php">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -127,18 +134,30 @@ include('functions/common_function.php')
                         </li>
 
                     </ul>
-
-                    <form class="d-flex ms-auto" method="get">
-                        <input class="form-control ms-2" type="search" name="search_data" placeholder="Search Products" aria-label="Search" style="width:350px;border-radius:8px;">
-                        <button class="btn btn-outline-none text-light" type="submit" name="search_data_product"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
                     <ul class="navbar-nav ms-auto ">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Welcome Guest</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="users_area/userLogin.php">Login</a>
-                        </li>
+                        <?php
+
+                        if (!isset($_SESSION['username'])) {
+                            echo "<li class='nav-item'>
+<a class='nav-link' href='#'>Welcome Guest</a>
+</li>";
+                        } else {
+                            echo "<li class='nav-item'>
+<a class='nav-link' href='#'>Welcome " . $_SESSION['username'] . " </a>
+</li>";
+                        }
+
+                        if (!isset($_SESSION['username'])) {
+                            echo "<li class='nav-item'>
+  <a class='nav-link' href='users_area/userLogin.php'>Login</a>
+</li>";
+                        } else {
+                            echo "<li class='nav-item'>
+  <a class='nav-link' href='users_area/logout.php'>Logout</a>
+</li>";
+                        }
+
+                        ?>
                     </ul>
 
                 </div>
@@ -201,8 +220,8 @@ include('functions/common_function.php')
                                             <td><?php echo $price_table ?></td>
                                             <td><input type="checkbox" name="remove_item[]" value="<?php echo $product_id ?>"></td>
                                             <td>
-                                                <input type="submit" class="btn btn-secondary text-light  p-2" id="btn_updateP" name="update_cart" value="Update Qty">
-                                                <input type="submit" class="btn btn-danger text-light  p-2 " id="btn_removeP" name="remove_cart" value="Remove Product">
+                                                <button type="submit" class="btn btn-secondary text-light  p-2 m-2" id="btn_updateP" name="update_cart">Update</button>
+                                                <button type="submit" class="btn btn-danger text-light  p-2 " id="btn_removeP" name="remove_cart"><i class="fa-solid fa-trash"></i></button>
                                             </td>
                                         </tr>
                             <?php
@@ -249,9 +268,9 @@ include('functions/common_function.php')
         {
             global $con;
             if (isset($_POST['remove_cart'])) {
-                if(empty($_POST['remove_item'])){
+                if (empty($_POST['remove_item'])) {
                     echo "<script>alert('Please Select the products');</script>";
-                }else{
+                } else {
                     foreach ($_POST['remove_item'] as $remove_id) {
                         $delete_query = "Delete from `cart_details` where product_id = '$remove_id'";
                         $run_delete = mysqli_query($con, $delete_query);
@@ -260,9 +279,7 @@ include('functions/common_function.php')
                         }
                     }
                 }
-                
-            } 
-            
+            }
         }
         echo $remove_item = remove_cart_item();
         ?>

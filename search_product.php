@@ -1,7 +1,8 @@
 <!-- connect file-->
 <?php
 include('includes/connect.php');
-include('functions/common_function.php')
+include('functions/common_function.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,17 +21,21 @@ include('functions/common_function.php')
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
   <style>
-     nav {
+    nav {
       background-color: rgb(50, 50, 50);
     }
-  
+
+    body {
+      overflow-x: hidden;
+    }
+
     .navbar .navbar-nav .nav-link {
       color: white;
       border-radius: 10px;
     }
 
     .navbar .navbar-nav .nav-link:hover {
-      color:black;
+      color: black;
       background-color: whitesmoke;
       transition: 0.4s;
     }
@@ -46,9 +51,11 @@ include('functions/common_function.php')
 
     .side-nav .navbar-nav .nav-link img {
       object-fit: contain;
-      
     }
-
+    .side-nav .navbar-nav{
+      background-color:rgb(50,50,50);
+      border:1px outset white;
+    }
     .side-nav .navbar-nav .nav-item:hover {
       letter-spacing: 1px;
       opacity: 80%;
@@ -71,12 +78,14 @@ include('functions/common_function.php')
       padding: 3px;
       cursor: pointer;
     }
-    #logo:hover{
+
+    #logo:hover {
       box-shadow: 1px 1px 5px white;
     }
-    .navbar-toggler-icon{
-      background:transparent;
+
+    .navbar-toggler-icon {
       filter: invert(100%);
+      background: transparent;
     }
   </style>
 </head>
@@ -100,7 +109,7 @@ include('functions/common_function.php')
               <a class="nav-link" href="#">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+              <a class="nav-link" href="users_area/user_registration.php">Register</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
@@ -117,12 +126,29 @@ include('functions/common_function.php')
             <button class="btn btn-outline-none text-line" type="submit" name="search_data_product"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
           <ul class="navbar-nav ms-auto ">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Welcome Guest</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="users_area/userLogin.php">Login</a>
-            </li>
+            <?php
+
+            if (!isset($_SESSION['username'])) {
+              echo "<li class='nav-item'>
+<a class='nav-link' href='#'>Welcome Guest</a>
+</li>";
+            } else {
+              echo "<li class='nav-item'>
+<a class='nav-link' href='#'>Welcome " . $_SESSION['username'] . " </a>
+</li>";
+            }
+
+            if (!isset($_SESSION['username'])) {
+              echo "<li class='nav-item'>
+  <a class='nav-link' href='users_area/userLogin.php'>Login</a>
+</li>";
+            } else {
+              echo "<li class='nav-item'>
+  <a class='nav-link' href='users_area/logout.php'>Logout</a>
+</li>";
+            }
+
+            ?>
           </ul>
         </div>
       </div>
@@ -182,9 +208,9 @@ include('functions/common_function.php')
       </div>
 
       <!--side nav-->
-      <div class="side-nav col-md-2  p-0 mt-3 mb-4"style="background-color:rgb(50,50,50);border:1px outset white;">
+      <div class="side-nav col-md-2  p-0 mt-3 mb-4" >
         <ul class="navbar-nav me-auto text-center">
-          <li class="nav-item "style="pointer-events:none" >
+          <li class="nav-item " style="pointer-events:none">
             <!-- Brands to be displayed -->
             <a href="#" class="nav-link text-light">
               <h4>Top Brands</h4>
