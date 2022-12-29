@@ -35,7 +35,7 @@ include('../functions/common_function.php');
         <h2 class="text-center text-light">Payment Options</h2>
         <div class="row my-5   d-flex align-items-center justify-content-center">
             <div class="col-md-6  d-flex align-items-center justify-content-center">
-            <a href="https://www.paytm.com"><img src="../images/paytm.png" width="200px"height="200px"  target="_blank"alt="paytm"></a>
+            <a href="https://www.paytm.com"><img src="../images/paytm.png" width="150px"height="150px"style="border-radius:35px;box-shadow:1px 1px 5px grey;"alt="paytm"></a>
             </div>
             <div class="col-md-6 ">
             <a href="order.php?user_id=<?php echo"$user_id"?>"><h2 class="text-center">Pay Offline</h2></a>
