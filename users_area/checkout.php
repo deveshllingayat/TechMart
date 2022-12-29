@@ -1,6 +1,7 @@
 <!-- connect file-->
 <?php
 include('../includes/connect.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,14 +23,18 @@ include('../includes/connect.php');
     nav {
       background-color: rgb(50, 50, 50);
     }
-  
-    .navbar .navbar-nav .nav-link{
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .navbar .navbar-nav .nav-link {
       color: white;
       border-radius: 10px;
     }
 
     .navbar .navbar-nav .nav-link:hover {
-      color:black;
+      color: black;
       background-color: whitesmoke;
       transition: 0.4s;
     }
@@ -45,7 +50,7 @@ include('../includes/connect.php');
 
     .side-nav .navbar-nav .nav-link img {
       object-fit: contain;
-      
+
     }
 
     .side-nav .navbar-nav .nav-item:hover {
@@ -70,11 +75,13 @@ include('../includes/connect.php');
       padding: 3px;
       cursor: pointer;
     }
-    #logo:hover{
+
+    #logo:hover {
       box-shadow: 1px 1px 5px white;
     }
-    .navbar-toggler-icon{
-      background:transparent;
+
+    .navbar-toggler-icon {
+      background: transparent;
       filter: invert(100%);
     }
   </style>
@@ -100,57 +107,69 @@ include('../includes/connect.php');
               <a class="nav-link" href="../displayAll.php">Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+              <a class="nav-link" href="user_registration.php">Register</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
-           
-          </ul>
 
-          <form class="d-flex ms-auto" method="get">
-            <input class="form-control ms-2" type="search" name="search_data" placeholder="Search Products" aria-label="Search" style="width:350px;border-radius:8px;">
-            <button class="btn btn-outline-none text-light" type="submit" name="search_data_product"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form>
+          </ul>
           <ul class="navbar-nav ms-auto ">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Welcome Guest</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="userLogin.php">Login</a>
-            </li>
+            <?php
+
+            if (!isset($_SESSION['username'])) {
+              echo "<li class='nav-item'>
+<a class='nav-link' href='#'>Welcome Guest</a>
+</li>";
+            } else {
+              echo "<li class='nav-item'>
+<a class='nav-link' href='#'>Welcome " . $_SESSION['username'] . " </a>
+</li>";
+            }
+
+            if (!isset($_SESSION['username'])) {
+              echo "<li class='nav-item'>
+  <a class='nav-link' href='userLogin.php'>Login</a>
+</li>";
+            } else {
+              echo "<li class='nav-item'>
+  <a class='nav-link' href='logout.php'>Logout</a>
+</li>";
+            }
+
+            ?>
           </ul>
 
         </div>
       </div>
     </nav>
- 
-  
-   
-    
+
+
+
+
     <div class="row px-1">
       <div class="col-md-12 mt-2 ">
-    
+
         <div class="row  ">
-        <?php 
-            if(!isset($_SESSION['user_username'])){
-                include('userLogin.php');
-            }else{
-                include('../payment.php');
-            }
+          <?php
+          if (!isset($_SESSION['username'])) {
+            include('userLogin.php');
+          } else {
+            include('payment.php');
+          }
 
-        ?>         
+          ?>
+        </div>
       </div>
+
     </div>
-   
-  </div>
 
-  <?php
-  include("../includes/footer.php");
-  ?>
+    <?php
+    include("../includes/footer.php");
+    ?>
 
-  <!-- Bootstrap Js link-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- Bootstrap Js link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
 </html>

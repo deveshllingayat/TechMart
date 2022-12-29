@@ -21,6 +21,7 @@ include('../functions/common_function.php');
             font-family: "Lato";
             background: url("../images/backgroundImage.gif");
             color: white;
+            overflow-x: hidden;
         }
 
         form {
@@ -40,8 +41,8 @@ include('../functions/common_function.php');
 
     <div class="container-fluid my-3">
 
-        <div class="row d-flex align-items-center justify-content-center">
-            <div class="col-lg-12 col-xl-6">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10 col-xl-5">
                 <form action="" method="post" enctype="multipart/form-data">
                     <h2 class="text-center m-3">
                          User Registration
@@ -86,6 +87,7 @@ include('../functions/common_function.php');
                     </div>
                 </form>
             </div>
+            <div class="col-lg-2 col-xl-1" ><a href="../index.php"style="font-size: 30px; color:darkgrey;" ><i class="fa-solid fa-xmark"></i></a></div>
         </div>
     </div>
 </body>
@@ -131,8 +133,8 @@ if(isset($_POST['user_register'])){
     //selecting cart items
     $select_cart_items = "Select * from `cart_details` where ip_address = '$user_ip'";
     $result_cart = mysqli_query($con,$select_cart_items);
-    $rows_count = mysqli_num_rows($result_cart);
-    if($rows_count>0){
+    $row_count = mysqli_num_rows($result_cart);
+    if($row_count>0){
         $_SESSION['username'] = $user_username;
         echo"<script>alert('You have items in your cart!');</script>";
         echo "<script>window.open('checkout.php','_self');</script>";
