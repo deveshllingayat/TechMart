@@ -59,10 +59,12 @@ session_start();
       opacity: 80%;
       transition: 0.2s linear;
     }
-    .side-nav .navbar-nav{
-      background-color:rgb(50,50,50);
-      border:1px outset white;
+
+    .side-nav .navbar-nav {
+      background-color: rgb(50, 50, 50);
+      border: 1px outset white;
     }
+
     .card-text {
       text-align: justify;
       display: -webkit-box;
@@ -110,9 +112,17 @@ session_start();
             <li class="nav-item">
               <a class="nav-link" href="displayAll.php">Products</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="users_area/user_registration.php">Register</a>
-            </li>
+           
+            <?php if (!isset($_SESSION['username'])) {
+              echo " <li class='nav-item'>
+              <a class='nav-link' href='users_area/user_registration.php'>Register</a>
+            </li>";
+            } else {
+              echo " <li class='nav-item'>
+              <a class='nav-link' href='users_area/profile.php'>My Account</a>
+            </li>";
+            }
+            ?>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
@@ -124,7 +134,7 @@ session_start();
             </li>
           </ul>
 
-          <form class="d-flex ms-auto" method="get">
+          <form class="d-flex ms-auto" method="get" action="search_product.php">
             <input class="form-control ms-2" type="search" name="search_data" placeholder="Search Products" aria-label="Search" style="width:350px;border-radius:8px;">
             <button class="btn btn-outline-none text-light" type="submit" name="search_data_product"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
@@ -199,12 +209,9 @@ session_start();
         <div class="row  ">
           <!-- fetching products-->
           <?php
-          if (isset($_GET['search_data_product'])) {
-            searchProduct();
-          } else {
-            getProducts();
-            viewMore();
-          }
+
+          getProducts();
+          viewMore();
           //it will fetch products based on category or brand from DB and display on homepage
           getUniqueCategories();
           getUniqueBrands();
@@ -218,7 +225,7 @@ session_start();
       </div>
 
       <!--side nav-->
-      <div class="side-nav col-md-2  p-0 mt-3 mb-4" >
+      <div class="side-nav col-md-2  p-0 mt-3 mb-4">
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item " style="pointer-events:none;">
             <a href="#" class="nav-link text-light">

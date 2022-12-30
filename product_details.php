@@ -110,9 +110,16 @@ session_start();
             <li class="nav-item">
               <a class="nav-link" href="displayAll.php">Products</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="users_area/user_registration.php">Register</a>
-            </li>
+            <?php if (!isset($_SESSION['username'])) {
+              echo " <li class='nav-item'>
+              <a class='nav-link' href='users_area/user_registration.php'>Register</a>
+            </li>";
+            } else {
+              echo " <li class='nav-item'>
+              <a class='nav-link' href='users_area/profile.php'>My Account</a>
+            </li>";
+            }
+            ?>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
@@ -161,37 +168,6 @@ session_start();
     ?>
 
 
-    <!-- third child-->
-    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="true">
-      <div class="carousel-indicators" style="filter:invert(60%);">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./images/Slide1.jpg" class="d-block w-100 " alt="Mobiles & Tablets" style="height:250px;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Slide2.jpg" class="d-block w-100 " alt="Laptops" style="height:250px;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Slide3.jpg" class="d-block w-100 " alt="Audio & Accessories" style="height:250px;">
-        </div>
-        <div class="carousel-item">
-          <img src="./images/Slide4.jpg" class="d-block w-100 " alt="Televisions" style="height:250px;">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" style="filter:invert(100%);" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" style="filter:invert(100%);" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
     <!-- fourth child-->
     <div class="row px-1">
       <div class="col-md-10 mt-2 ">
