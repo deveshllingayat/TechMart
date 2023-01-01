@@ -1,5 +1,4 @@
 <?php
-
 //displaying random products on home page
 function getProducts()
 {
@@ -196,6 +195,7 @@ function searchProduct()
 {
   global $con;
   if (isset($_GET['search_data_product'])) {
+    
     $search_data_value = $_GET['search_data'];
     $search_query = "Select * from `products` where product_keyword like '%$search_data_value%'";
     $result_query = mysqli_query($con, $search_query);
@@ -203,6 +203,7 @@ function searchProduct()
     if ($no_of_rows == 0) {
       echo "<h2 style='font-family:Lato;color:white;text-align:center;'>No Products Available!</h2>";
     }
+    
     while ($row = mysqli_fetch_assoc($result_query)) {
       $product_title = $row['product_title'];
       $description = $row['product_desc'];
@@ -211,7 +212,7 @@ function searchProduct()
       $product_price = $row['product_price'];
       $category_id = $row['category_id'];
       $brand_id = $row['brand_id'];
-
+      
       echo "<div class='col-md-4 mb-3 d-flex align-items-stretch'style='width: 18rem;'>
       <div class='card h-auto d-inline-block'style='border-radius:20px;margin:8px;'>
         <img src='./images/product_images/$product_image1' class='card-img-top' alt='$product_title'style='border-radius:20px;'>
@@ -364,4 +365,29 @@ function cart_item_no(){
     }
     return $total_price;
   }
+
+  //get user order details
+  function get_user_order_details(){
+    global $con;
+    $username = $_SESSION['username'];
+    $get_details = "Select * from `user_table` where username= '$username' ";
+    $result_query = mysqli_query($con,$get_details);
+    while($row = mysqli_fetch_array($result_query)){
+      $user_id = $row['user_id'];
+      if(!isset($_GET['edit_account'])){
+        if(!isset($_GET['my_orders'])){
+          if(!isset($_GET['delete_account'])){
+            $get_orders = "select * from `user_orders` where user_id = $user_id and order_status='pending'";
+            $result_orders_query = mysqli_query($con,$get_orders);
+            $row_count = mysqli_num_rows($result_orders_query);
+            if($row_count>0){
+              echo"<h3 class = 'text-center text-light'style='margin-top:20%;'>You have <span class='text-danger'>$row_count</span> pending orders.</h3> <p class = 'text-center'><a href='profile.php?my_orders'class='text-light' >Order Details</a></p>";
+                          }else{
+                            echo"<h3 class = 'text-center text-light'style='margin-top:20%;'>You have zero pending orders.</h3> <p class = 'text-center'><a href='../index.php'class='text-light' >Explore Products</a></p>";
+                          }
+                      }
+                    }
+                  }
+                }
+              } 
 ?>
