@@ -88,7 +88,6 @@ session_start();
 
     .navbar-toggler-icon {
       filter: invert(100%);
-      background-color: transparent;
     }
   </style>
 </head>

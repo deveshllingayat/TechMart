@@ -52,10 +52,12 @@ session_start();
     .side-nav .navbar-nav .nav-link img {
       object-fit: contain;
     }
-    .side-nav .navbar-nav{
-      background-color:rgb(50,50,50);
-      border:1px outset white;
+
+    .side-nav .navbar-nav {
+      background-color: rgb(50, 50, 50);
+      border: 1px outset white;
     }
+
     .side-nav .navbar-nav .nav-item:hover {
       letter-spacing: 1px;
       opacity: 80%;
@@ -85,7 +87,6 @@ session_start();
 
     .navbar-toggler-icon {
       filter: invert(100%);
-      background: transparent;
     }
   </style>
 </head>
@@ -183,7 +184,7 @@ session_start();
       </div>
 
       <!--side nav-->
-      <div class="side-nav col-md-2  p-0 mt-3 mb-4" >
+      <div class="side-nav col-md-2  p-0 mt-3 mb-4">
         <ul class="navbar-nav me-auto text-center">
           <li class="nav-item " style="pointer-events:none">
             <!-- Brands to be displayed -->
