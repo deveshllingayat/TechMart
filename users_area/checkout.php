@@ -80,10 +80,9 @@ session_start();
       box-shadow: 1px 1px 5px white;
     }
 
-    .navbar-toggler-icon {
-      background: transparent;
-      filter: invert(100%);
-    }
+    .navbar-toggler-icon{
+            filter: invert(100%);
+        }
   </style>
 </head>
 

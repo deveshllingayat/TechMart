@@ -11,7 +11,8 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile</title>
+  <title>Welcome <?php echo $_SESSION['username'] ?></title>
+  <title>Welcome <?php ?></title>
   <!-- Bootstrap CSS link-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
@@ -27,6 +28,7 @@ session_start();
 
     body {
       overflow-x: hidden;
+      font-family: 'Lato';
     }
 
     .navbar .navbar-nav .nav-link {
@@ -69,6 +71,17 @@ session_start();
       filter: invert(100%);
       background-color: transparent;
     }
+
+    .profile_img {
+      width: 90%;
+      border-radius: 20px;
+      object-fit: contain;
+      margin:auto;
+      display: block;
+    }
+    .navbar-toggler-icon{
+      filter: invert(100%);
+    }
   </style>
 </head>
 
@@ -109,31 +122,7 @@ session_start();
             <input class="form-control ms-2" type="search" name="search_data" placeholder="Search Products" aria-label="Search" style="width:350px;border-radius:8px;">
             <button class="btn btn-outline-none text-light" type="submit" name="search_data_product"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
-          <ul class="navbar-nav ms-auto ">
-            <?php
-
-        //     if (!isset($_SESSION['username'])) {
-        //       echo "<li class='nav-item'>
-        //     <a class='nav-link' href='#'>Welcome Guest</a>
-        //   </li>";
-        //     } else {
-        //       echo "<li class='nav-item'>
-        //     <a class='nav-link' href='#'>Welcome " . $_SESSION['username'] . " </a>
-        //   </li>";
-        //     }
-
-            if (!isset($_SESSION['username'])) {
-              echo "<li class='nav-item'>
-              <a class='nav-link' href='userLogin.php'>Login</a>
-            </li>";
-            } else {
-              echo "<li class='nav-item'>
-              <a class='nav-link' href='logout.php'>Logout</a>
-            </li>";
-            }
-
-            ?>
-          </ul>
+      
 
         </div>
       </div>
@@ -142,15 +131,68 @@ session_start();
     <?php
     cart();
     ?>
-    
-    <!-- fourth child-->
-    
-  <?php
-  include("../includes/footer.php");
-  ?>
 
-  <!-- Bootstrap Js link-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- fourth child-->
+    <div class="row">
+      <div class="col-md-2 p-0">
+        <ul class="navbar-nav text-center mt-4"style="background-color:#E8E8E8;height:100vh;">
+          <li class="nav-item text-light"style="background-color:rgb(50,50,50);border:1 px outset white;">
+            <a class="nav-link" href="#">
+              <h4>Your Profile</h4>
+            </a>
+          </li>
+          <?php
+          $username = $_SESSION['username'];
+          $user_image_query = "Select * from `user_table` where username = '$username'";
+          $result_image = mysqli_query($con,$user_image_query);
+          $row_image = mysqli_fetch_array($result_image);
+          $user_image = $row_image['user_image'];
+          echo "<li class='nav-item'>
+          <img src='./users_images/$user_image' class='profile_img my-3' alt='profile_photo'>
+        </li>";
+           ?>
+          
+          <li class="nav-item  text-dark">
+            <a class="nav-link" href="profile.php">
+              Pending Orders
+            </a>
+          </li>
+          <li class="nav-item  text-dark">
+            <a class="nav-link" href="profile.php?edit_account">
+              Edit Account
+            </a>
+          </li>
+          <li class="nav-item  text-dark">
+            <a class="nav-link" href="profile.php?my_orders">
+              My Orders
+            </a>
+          </li>
+          <li class="nav-item  text-dark ">
+            <a class="nav-link" href="profile.php?delete_account">
+              Delete Account
+            </a>
+          </li>
+          <li class="nav-item  text-dark ">
+            <a class="nav-link" href="logout.php">
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-10">
+          <?php 
+          get_user_order_details()
+          ?>
+      </div>
+    </div>
+
+    <?php
+    include("../includes/footer.php");
+    ?>
+
+    <!-- Bootstrap Js link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 
 </html>
