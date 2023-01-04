@@ -73,7 +73,8 @@ session_start();
     }
 
     .profile_img {
-      width: 90%;
+      width: 100px;
+      height: 100px;
       border-radius: 20px;
       object-fit: contain;
       margin:auto;
@@ -180,9 +181,12 @@ session_start();
         </ul>
       </div>
 
-      <div class="col-md-10">
+      <div class="col-md-10 text-center">
           <?php 
-          get_user_order_details()
+          get_user_order_details();
+          if(isset($_GET['edit_account'])){
+            include('edit_account.php');
+          }
           ?>
       </div>
     </div>
