@@ -20,85 +20,6 @@ session_start();
     <!-- CSS FILE-->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-
-        nav {
-            background-color: rgb(50, 50, 50);
-        }
-
-        .navbar .navbar-nav .nav-link {
-            color: white;
-            border-radius: 10px;
-        }
-
-        .navbar .navbar-nav .nav-link:hover {
-            color: black;
-            background-color: whitesmoke;
-            transition: 0.4s;
-        }
-
-        .navbar form button i:hover {
-            font-size: 14px;
-        }
-
-        .nav-item {
-            font-family: 'Lato';
-            font-size: 16px;
-        }
-
-        .side-nav .navbar-nav .nav-link img {
-            object-fit: contain;
-        }
-
-        .side-nav .navbar-nav .nav-item:hover {
-            box-shadow: 1px 1px 10px grey;
-            transition: 0.2s;
-        }
-
-        .card-text {
-            text-align: justify;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        #logo {
-            color: yellow;
-            box-shadow: 1px 1px 10px black;
-            border-radius: 10px;
-            font-family: forte;
-            padding: 3px;
-        }
-
-        #logo:hover {
-            box-shadow: 1px 1px 5px white;
-            cursor: pointer;
-        }
-
-        .btn {
-            border-radius: 10px;
-
-        }
-
-        #qty_input {
-            width: 60px;
-        }
-
-        #btn_updateP:hover {
-            background-color: dimgrey;
-        }
-
-        #btn_removeP:hover {
-            background-color: #b22222;
-        }
-        .navbar-toggler-icon{
-            filter: invert(100%);
-        }
-    </style>
 </head>
 
 <body>
@@ -175,7 +96,7 @@ session_start();
         <div class="conatainer">
             <div class="row">
                 <form action="" method="post">
-                    <table class="table  text-center text-dark m-auto w-75 mt-3" style="vertical-align:middle;background-color:beige;border-radius:20px;font-family:lato;">
+                    <table class="table  text-center text-dark m-auto w-75 my-3" >
 
                         <tbody>
                             <?php
@@ -184,7 +105,7 @@ session_start();
                             $result = mysqli_query($con, $cart_query);
                             $result_count = mysqli_num_rows($result);
                             if ($result_count > 0) {
-                                echo "<thead>
+                                echo "<thead class='text-light'style='background-color:rgb(50,50,50) '>
                             <th>Product Title</th>
                             <th>Product Image</th>
                             <th>Quantity</th>
@@ -221,11 +142,11 @@ session_start();
                                             ?>
 
                                             <td><input type="number" min="1" max="100" value="<?php echo $qty ?>" name="quantity[<?php echo $product_id ?>]" id="qty_input"></td>
-                                            <td><?php echo $price_table ?></td>
+                                            <td><?php echo "<span>&#x20B9; </span>".$price_table ?></td>
                                             <td><input type="checkbox" name="remove_item[]" value="<?php echo $product_id ?>"></td>
                                             <td>
-                                                <button type="submit" class="btn btn-secondary text-light  p-2 m-2" id="btn_updateP" name="update_cart">Update</button>
-                                                <button type="submit" class="btn btn-danger text-light  p-2 " id="btn_removeP" name="remove_cart"><i class="fa-solid fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-dark border-0 text-light  p-2 m-2" id="btn_updateP" name="update_cart">Update</button>
+                                                <button type="submit" class="btn btn-danger border-0 text-light  px-3 py-2 " id="btn_removeP" name="remove_cart"><i class="fa-solid fa-trash"></i></button>
                                             </td>
                                         </tr>
                             <?php

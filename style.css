@@ -1,16 +1,121 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-
 }
 
-.card-image-top{
-    width:100%;
-    height:200px;
+.card-image-top {
+    width: 100%;
+    height: 200px;
     object-fit: contain;
 }
 
-body{
+body {
     background-image: url("images/backgroundImage.gif");
+    overflow-x: hidden;
 }
+
+nav {
+    background-color: rgb(50, 50, 50);
+}
+
+
+
+.navbar .navbar-nav .nav-link {
+    color: white;
+    border-radius: 10px;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: black;
+    background-color: whitesmoke;
+    transition: 0.4s;
+}
+
+.navbar form button i:hover {
+    font-size: 14px;
+}
+
+.nav-item {
+    font-family: 'Lato';
+    font-size: 16px;
+}
+
+.side-nav .navbar-nav .nav-link img {
+    object-fit: contain;
+
+}
+
+.side-nav .navbar-nav .nav-item:hover {
+    opacity: 80%;
+    transition: 0.2s linear;
+}
+
+.side-nav .navbar-nav {
+    background-color: rgb(50, 50, 50);
+    border: 1px outset white;
+}
+
+.card-text {
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+#logo {
+    color: yellow;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 10px;
+    font-family: forte;
+    padding: 3px;
+    cursor: pointer;
+}
+
+#logo:hover {
+    box-shadow: 1px 1px 5px white;
+}
+
+.navbar-toggler-icon {
+    filter: invert(100%);
+}
+/* cart css */
+
+#qty_input {
+    width: 60px;
+}
+
+#btn_updateP:hover {
+    background-color: black;
+}
+
+#btn_removeP:hover {
+    background-color: #b22222;
+}
+.btn{
+    border-radius: 10px;
+}
+.table{
+    vertical-align:middle;
+    background-color:beige;
+    font-family:lato;
+}
+/* cart css end  */
+/* my account page  */
+.profile_img {
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    object-fit: contain;
+    display: block;
+  }
+  .navbar-toggler-icon{
+    filter: invert(100%);
+  }
+  .row .my_profile_nav .nav-link:hover{
+    /* font-weight: bold; */
+    background-color: gainsboro;
+  }
+/* my account page done  */
