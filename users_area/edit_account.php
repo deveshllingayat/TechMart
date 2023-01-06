@@ -50,7 +50,7 @@ if (isset($_GET['edit_account'])) {
             <input type="email" class="form-control w-50 m-auto" value="<?php echo "$user_email" ?>" name="user_email">
         </div>
         <div class="form-outline d-flex mb-4 w-50 m-auto">
-            <img src="./users_images/<?php echo "$user_image"; ?>" alt="user_image" class="profile_img w-25 ">
+            <img src="./users_images/<?php echo "$user_image"; ?>" alt="user_image" class="profile_img w-25 mx-2">
             <input type="file" class="form-control w-75 m-auto" name="user_image">
         </div>
         <div class="form-outline mb-4">
@@ -59,7 +59,7 @@ if (isset($_GET['edit_account'])) {
         <div class="form-outline mb-4">
             <input type="text" class="form-control w-50 m-auto" value="<?php echo "$user_contact" ?>" name="user_contact">
         </div>
-        <button type="submit"name="user_update" class="bg-primary text-light px-3 py-2 mb-3" style="border-radius:10px;">Update</button>
+        <button type="submit"name="user_update" class="btn btn-primary text-light px-3 py-2 mb-3" style="border-radius:10px;">Update</button>
     </form>
 </body>
 

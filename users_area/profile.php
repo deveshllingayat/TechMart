@@ -21,69 +21,8 @@ session_start();
   <!-- CSS FILE-->
   <link rel="stylesheet" href="../style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
-  <style>
-    nav {
-      background-color: rgb(50, 50, 50);
-    }
 
-    body {
-      overflow-x: hidden;
-      font-family: 'Lato';
-    }
 
-    .navbar .navbar-nav .nav-link {
-      color: white;
-      border-radius: 10px;
-    }
-
-    .navbar .navbar-nav .nav-link:hover {
-      color: black;
-      background-color: whitesmoke;
-      transition: 0.4s;
-    }
-
-    .navbar form button i:hover {
-      font-size: 14px;
-    }
-
-    .card-text {
-      text-align: justify;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    #logo {
-      color: yellow;
-      box-shadow: 1px 1px 10px black;
-      border-radius: 10px;
-      font-family: forte;
-      padding: 3px;
-      cursor: pointer;
-    }
-
-    #logo:hover {
-      box-shadow: 1px 1px 5px white;
-    }
-
-    .navbar-toggler-icon {
-      filter: invert(100%);
-      background-color: transparent;
-    }
-
-    .profile_img {
-      width: 100px;
-      height: 100px;
-      border-radius: 20px;
-      object-fit: contain;
-      margin:auto;
-      display: block;
-    }
-    .navbar-toggler-icon{
-      filter: invert(100%);
-    }
-  </style>
 </head>
 
 <body>
@@ -136,7 +75,7 @@ session_start();
     <!-- fourth child-->
     <div class="row">
       <div class="col-md-2 p-0">
-        <ul class="navbar-nav text-center mt-4"style="background-color:#E8E8E8;height:100vh;">
+        <ul class="my_profile_nav navbar-nav text-center mt-4"style="background-color:#E8E8E8;height:100vh;">
           <li class="nav-item text-light"style="background-color:rgb(50,50,50);border:1 px outset white;">
             <a class="nav-link" href="#">
               <h4>Your Profile</h4>
@@ -148,30 +87,79 @@ session_start();
           $result_image = mysqli_query($con,$user_image_query);
           $row_image = mysqli_fetch_array($result_image);
           $user_image = $row_image['user_image'];
-          echo "<li class='nav-item'>
+          echo "<li class='nav-item '>
           <img src='./users_images/$user_image' class='profile_img my-3' alt='profile_photo'>
         </li>";
            ?>
           
           <li class="nav-item  text-dark">
-            <a class="nav-link" href="profile.php">
+            <?php 
+            if(isset($_GET['pending_orders'])){
+              echo"
+              <a class='nav-link' href='profile.php?pending_orders' style='font-weight:bold;'>
               Pending Orders
-            </a>
+              </a>";
+            }else{
+              echo"
+              <a class='nav-link' href='profile.php?pending_orders'>
+              Pending Orders
+              </a>";
+            }
+            ?>
           </li>
           <li class="nav-item  text-dark">
-            <a class="nav-link" href="profile.php?edit_account">
+            <!-- <a class="nav-link" href="profile.php?edit_account">
               Edit Account
-            </a>
+            </a> -->
+            <?php 
+            if(isset($_GET['edit_account'])){
+              echo"
+              <a class='nav-link' href='profile.php?edit_account' style='font-weight:bold;'>
+              Edit Account
+              </a>";
+            }else{
+              echo"
+              <a class='nav-link' href='profile.php?edit_account'>
+              Edit Account
+              </a>";
+            }
+            ?>
           </li>
           <li class="nav-item  text-dark">
-            <a class="nav-link" href="profile.php?my_orders">
+            <!-- <a class="nav-link" href="profile.php?my_orders">
               My Orders
-            </a>
+            </a> -->
+            <?php 
+            if(isset($_GET['my_orders'])){
+              echo"
+              <a class='nav-link' href='profile.php?my_orders' style='font-weight:bold;'>
+              My Orders
+              </a>";
+            }else{
+              echo"
+              <a class='nav-link' href='profile.php?my_orders'>
+              My Orders
+              </a>";
+            }
+            ?>
           </li>
           <li class="nav-item  text-dark ">
-            <a class="nav-link" href="profile.php?delete_account">
+            <!-- <a class="nav-link" href="profile.php?delete_account">
               Delete Account
-            </a>
+            </a> -->
+            <?php 
+            if(isset($_GET['delete_account'])){
+              echo"
+              <a class='nav-link' href='profile.php?delete_account' style='font-weight:bold;'>
+              Delete Account
+              </a>";
+            }else{
+              echo"
+              <a class='nav-link' href='profile.php?delete_account'>
+              Delete Account
+              </a>";
+            }
+            ?>
           </li>
           <li class="nav-item  text-dark ">
             <a class="nav-link" href="logout.php">
@@ -186,6 +174,12 @@ session_start();
           get_user_order_details();
           if(isset($_GET['edit_account'])){
             include('edit_account.php');
+          }
+          if(isset($_GET['my_orders'])){
+            include('user_orders.php');
+          }
+          if(isset($_GET['delete_account'])){
+            include('delete_account.php');
           }
           ?>
       </div>
