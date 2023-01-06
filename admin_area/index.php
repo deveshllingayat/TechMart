@@ -25,10 +25,11 @@
         }
         .navbar .navbar-nav .nav-link{
             color:white;
+            border-radius: 10px;
         }
         .navbar .navbar .navbar-nav .nav-link:hover{
-            border-radius: 10px;
-            box-shadow: 1px 1px 5px black;
+            background-color: black;
+            box-shadow: 1px 1px 5px white;
             transition: 0.2s;
         }
         .button .btn{
@@ -58,7 +59,7 @@
             <div class="container-fluid">
             <h4 id="logo">tm</h4>
                 <h3 class="text-center text-light p-2s"style="font-family:'Lato';font-size:40px;">TechMart Admin Panel</h3>
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand-lg bg-transparent">
                     <ul class="navbar-nav " >
                         <li class="navbar-item ">
                         <a href="" class="nav-link text-light">Welcome Guest</a>
@@ -74,7 +75,7 @@
         <div class="row">
             <div class="col-md-12  p-1 d-flex align-items-center">
                 <div class="p-3">
-                    <img src="../images/iphone14.jpg" alt="Admin Image" class="admin_img">
+                    <img src="../images/GoogleLogo.png" alt="Admin Image" class="admin_img">
                     <p class="text-light text-center p-1"style="font-size:16px;font-family:'Candara';">Admin Name</p>
                 </div>
                 <div class="button text-center " >

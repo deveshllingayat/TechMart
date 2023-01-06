@@ -25,7 +25,7 @@ if(isset($_POST['insert_cat'])){
   <input type="text" class="form-control" name = "cat_title"placeholder="Category Title" required />
 </div>
 <div class="input-group w-10 mb-2 m-auto"style="display:flex;justify-content:center;">
- <input type="submit" class="bg-primary text-light p-2 my-3 border-0"style="border-radius:15px;"name = "insert_cat"value="Insert Category" required/> 
+ <button type="submit" class="btn btn-primary text-light p-2 my-2 border-0" name = "insert_cat">Insert Category</button>
 
 </div>
 </form>
