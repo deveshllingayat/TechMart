@@ -267,7 +267,7 @@ function viewMore()
             <div class='col-md-8'>
             <div class='row '>
             <div class='col-md-12'>
-                <h2 class='text-center text-light'>Product Images</h2>
+                <h2 class=' text-light'>Product Images</h2>
             </div>
             <div class='col-md-6'>
             <img src='./images/product_images/$product_image2'  class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:fill;'>
@@ -276,7 +276,7 @@ function viewMore()
             <img src='./images/product_images/$product_image3' class='card-img-top' alt='$product_title'height='250px'style='border-radius:20px;object-fit:fill;'>
             </div>
             <div class = 'text-light m-3'>
-              <h3 class='text-center'>Product Description</h3>
+              <h3 class=''>Product Description</h3>
               <p >$description</p>
             </div>
             </div>
@@ -381,9 +381,9 @@ function cart_item_no(){
             $result_orders_query = mysqli_query($con,$get_orders);
             $row_count = mysqli_num_rows($result_orders_query);
             if($row_count>0){
-              echo"<h3 class = 'text-center text-light'style='margin-top:20%;'>You have <span class='text-danger'>$row_count</span> pending orders.</h3> <p class = 'text-center'><a href='profile.php?my_orders'class='text-light' >Order Details</a></p>";
+              echo"<h3 class = 'text-center text-light'style='margin-top:20%;'>You have <span class='text-danger'>$row_count</span> pending orders.</h3> <p class = 'text-center'><a href='profile.php?my_orders'class='text-info text-decoration-none' >Order Details</a></p>";
                           }else{
-                            echo"<h3 class = 'text-center text-light'style='margin-top:20%;'>You have zero pending orders.</h3> <p class = 'text-center'><a href='../index.php'class='text-light' >Explore Products</a></p>";
+                            echo"<h3 class = 'text-center text-light'style='margin-top:20%;'>You have <span class='text-danger'>zero</span> pending orders.</h3> <p class = 'text-center'><a href='../index.php'class='text-info text-decoration-none' >Explore</a></p>";
                           }
                       }
                     }
