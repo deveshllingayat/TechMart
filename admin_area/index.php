@@ -1,3 +1,7 @@
+<?php
+include('../includes/connect.php');
+include('../functions/common_function.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,14 +38,8 @@
         }
         .button .btn{
             font-size:24px;
-            font-family:'Lato';
-            color: white;
-            background:transparent;
-            box-shadow: 1px 1px 4px white;
-        }
-        .button .btn :hover{
-            color:darkgrey;
-        }
+            box-shadow: 1px 1px 5px black;
+        }   
         #logo{
         color:yellow;
         background-color: black;
@@ -49,6 +47,13 @@
         border-radius:10px;
         font-family:forte;
         padding:3px;
+        }
+        .product_img{
+            width:80px;
+            height:80px;
+            object-fit: contain;
+            border-radius: 10px;
+            
         }
     </style>
 </head>
@@ -79,56 +84,56 @@
                     <p class="text-light text-center p-1"style="font-size:16px;font-family:'Candara';">Admin Name</p>
                 </div>
                 <div class="button text-center " >
-                    <buttton class="btn mx-1"s>
+                    <button class="btn btn-light mx-1"s>
                         <a href="insert_products.php" class="nav-link mx-1">
                             Insert Products
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2"s>  
-                        <a href="" class="nav-link mx-1">
+                    </button>
+                    <button class="btn btn-light m-2"s>  
+                        <a href="index.php?view_products" class="nav-link mx-1">
                             View Products
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2"s>
+                    </button>
+                    <button class="btn btn-light m-2"s>
                         <a href="index.php?insert_category" class="nav-link mx-1">
                             Insert Categories
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2"s>
+                    </button>
+                    <button class="btn btn-light m-2"s>
                         <a href="" class="nav-link mx-1">
                             View Categories
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2"s>
+                    </button>
+                    <button class="btn btn-light m-2"s>
                         <a href="index.php?insert_brand" class="nav-link mx-1">
                             Insert Brands
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2"s>
+                    </button>
+                    <button class="btn btn-light m-2"s>
                         <a href="" class="nav-link mx-1">
                             View Brands
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2"s>
+                    </button>
+                    <button class="btn btn-light m-2"s>
                         <a href="" class="nav-link mx-1">
                             All Orders
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2"s>
+                    </button>
+                    <button class="btn btn-light m-2"s>
                         <a href="" class="nav-link mx-1">
                             All Payments
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2"s>
+                    </button>
+                    <button class="btn btn-light m-2"s>
                         <a href="" class="nav-link mx-1">
                             List Users
                         </a>
-                    </buttton>
-                    <buttton class="btn m-2">
+                    </button>
+                    <button class="btn btn-light m-2">
                         <a href="" class="nav-link mx-1">
                             Logout
                         </a>
-                    </buttton>                    
+                    </button>                    
 
                 </div>
             </div>
@@ -142,13 +147,17 @@
             include('insert_categories.php');
         
         if(isset($_GET['insert_brand']))
-            include('insert_brands.php')
+            include('insert_brands.php');
+
+        if(isset($_GET['view_products']))
+            include('view_products.php');
         
         ?>
+    
     </div>
 
+<?php include('footer.php'); ?>
 
-    <div class="p-2 text-center footer" style="background-color:#3B71CA;font-family:'Lato';color:white;font-size:20px"><i class="fa-regular fa-copyright"></i> All Rights Reserved by TechMart</div>
 
 <!-- Bootstrap js link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
