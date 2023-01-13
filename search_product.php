@@ -23,9 +23,9 @@ session_start();
 </head>
 
 <body>
-  <div class="container-fluid p-0">
+  <div class="container-fluid bg-secondary p-0">
     <!--first child-->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar bg-dark navbar-expand-lg">
       <div class="container-fluid">
         <h4 id="logo">tm</h4>
         <a class="navbar-brand" href="#"></a>
@@ -116,7 +116,7 @@ session_start();
 
       <!--side nav-->
       <div class="side-nav col-md-2  p-0 mt-3 mb-4">
-        <ul class="navbar-nav me-auto text-center">
+        <ul class="navbar-nav bg-dark me-auto text-center">
           <li class="nav-item " style="pointer-events:none">
             <!-- Brands to be displayed -->
             <a href="#" class="nav-link text-light">
@@ -128,7 +128,7 @@ session_start();
           ?>
         </ul>
         <!--Categories to be displayed-->
-        <ul class="navbar-nav me-auto text-center">
+        <ul class="navbar-nav bg-dark me-auto text-center">
           <li class="nav-item " style="pointer-events:none">
             <a href="#" class="nav-link text-light">
               <h4>Categories</h4>

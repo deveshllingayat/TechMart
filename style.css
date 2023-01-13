@@ -11,15 +11,13 @@
 }
 
 body {
-    background-image: url("images/backgroundImage.gif");
     overflow-x: hidden;
+    font-family: 'lato';
 }
 
 nav {
     background-color: rgb(50, 50, 50);
 }
-
-
 
 .navbar .navbar-nav .nav-link {
     color: white;
@@ -37,7 +35,6 @@ nav {
 }
 
 .nav-item {
-    font-family: 'Lato';
     font-size: 16px;
 }
 
@@ -51,10 +48,7 @@ nav {
     transition: 0.2s linear;
 }
 
-.side-nav .navbar-nav {
-    background-color: rgb(50, 50, 50);
-    border: 1px outset white;
-}
+
 
 .card-text {
     text-align: justify;
@@ -65,12 +59,11 @@ nav {
 }
 
 #logo {
-    color: yellow;
-    box-shadow: 1px 1px 10px black;
+    color:black;
+    background-color: white;
     border-radius: 10px;
     font-family: forte;
     padding: 3px;
-    cursor: pointer;
 }
 
 #logo:hover {
@@ -80,6 +73,7 @@ nav {
 .navbar-toggler-icon {
     filter: invert(100%);
 }
+
 /* cart css */
 
 #qty_input {
@@ -93,29 +87,35 @@ nav {
 #btn_removeP:hover {
     background-color: #b22222;
 }
-.btn{
+
+.btn {
     border-radius: 10px;
 }
-.table{
-    vertical-align:middle;
-    background-color:beige;
-    font-family:lato;
+
+.table {
+    vertical-align: middle;
+    background-color: beige;
+    font-family: lato;
 }
+
 /* cart css end  */
 /* my account page  */
 .profile_img {
     margin: auto;
     width: 150px;
-    height: 150px;
+    height: 100px;
     border-radius: 5px;
     object-fit: contain;
     display: block;
-  }
-  .navbar-toggler-icon{
+}
+
+.navbar-toggler-icon {
     filter: invert(100%);
-  }
-  .row .my_profile_nav .nav-link:hover{
+}
+
+.row .my_profile_nav .nav-link:hover {
     /* font-weight: bold; */
     background-color: gainsboro;
-  }
+}
+
 /* my account page done  */

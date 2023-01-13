@@ -23,9 +23,9 @@ session_start();
 </head>
 
 <body>
-    <div class="container-fluid p-0">
+    <div class="container-fluid bg-secondary p-0">
         <!--first child-->
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar bg-dark navbar-expand-lg">
             <div class="container-fluid">
                 <h4 id="logo">tm</h4>
                 <a class="navbar-brand" href="#"></a>
@@ -98,7 +98,7 @@ session_start();
                 <form action="" method="post">
                     <table class="table  text-center text-dark m-auto w-75 my-3" >
 
-                        <tbody>
+                        
                             <?php
                             $get_ip = getIPAddress();
                             $cart_query = "Select * from `cart_details` where ip_address = '$get_ip'";
@@ -128,10 +128,11 @@ session_start();
                                         $product_values = array_sum($product_price);
 
                             ?>
+                            <tbody class="bg-light">
                                         <tr>
                                             <td><?php echo $product_title ?></td>
                                             <td>
-                                                <img src="./images/product_images/<?php echo $product_image1 ?>" width="80px" height="80px" alt="iphone 14" style="border-radius:15px;object-fit:contain;">
+                                                <img src="./images/product_images/<?php echo $product_image1 ?>" width="80px" height="80px" alt="iphone 14" style="border-radius:10px;object-fit:contain;">
                                             </td>
                                             <?php
                                             if (isset($_POST['update_cart']) && isset($_POST['quantity'][$product_id])) {
@@ -145,8 +146,8 @@ session_start();
                                             <td><?php echo "<span>&#x20B9; </span>".$price_table ?></td>
                                             <td><input type="checkbox" name="remove_item[]" value="<?php echo $product_id ?>"></td>
                                             <td>
-                                                <button type="submit" class="btn btn-dark border-0 text-light  p-2 m-2" id="btn_updateP" name="update_cart">Update</button>
-                                                <button type="submit" class="btn btn-danger border-0 text-light  px-3 py-2 " id="btn_removeP" name="remove_cart"><i class="fa-solid fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-secondary border-0 text-light  p-2 m-2" id="btn_updateP" name="update_cart">Update</button>
+                                                <button type="submit" class="btn btn-danger border-0 text-light " id="btn_removeP" name="remove_cart"><i class="fa-solid fa-trash"></i></button>
                                             </td>
                                         </tr>
                             <?php
@@ -168,12 +169,12 @@ session_start();
                     if ($result_count > 0) {
                         echo "<div class='d-flex justify-content-center align-items-center'>
                                 <h5 class='h5 px-3 text-light '>Subtotal:$total/- </h5>
-                                <input type='submit'value='Continue Shopping' class='btn btn-primary text-light m-2 p-2 'name='continue_shopping'>
-                                <input type='submit' class='btn btn-primary text-light m-2 p-2 'value='Checkout'name='Checkout_btn'>
+                                <input type='submit'value='Continue Shopping' class='btn btn-dark text-light m-2 p-2 'name='continue_shopping'>
+                                <input type='submit' class='btn btn-dark text-light m-2 p-2 'value='Checkout'name='Checkout_btn'>
                             </div>";
                     } else {
                         echo "<div class='d-flex justify-content-center align-items-center'>
-                                <input type='submit'value='Continue Shopping' class='btn btn-primary text-light m-2 p-2 'name='continue_shopping'>
+                                <input type='submit'value='Continue Shopping' class='btn btn-dark text-light m-2 p-2 'name='continue_shopping'>
                             </div>";
                     }
                     if (isset($_POST['continue_shopping'])) {

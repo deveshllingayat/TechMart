@@ -22,10 +22,10 @@ session_start();
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
 </head>
 
-<body>
-  <div class="container-fluid p-0">
+<body >
+  <div class="container-fluid p-0 bg-secondary">
     <!--first child-->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg bg-dark">
       <div class="container-fluid">
         <h4 id="logo">tm</h4>
         <a class="navbar-brand" href="#"></a>
@@ -34,7 +34,7 @@ session_start();
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav  me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
@@ -71,11 +71,11 @@ session_start();
             <?php
 
             if (!isset($_SESSION['username'])) {
-              echo "<li class='nav-item'>
-            <a class='nav-link' href='#'>Welcome Guest</a>
+              echo "<li class='nav-item pe-none'>
+            <a class='nav-link ' href='#'>Welcome Guest</a>
           </li>";
             } else {
-              echo "<li class='nav-item'>
+              echo "<li class='nav-item pe-none'>
             <a class='nav-link' href='#'>Welcome " . $_SESSION['username'] . " </a>
           </li>";
             }
@@ -155,7 +155,7 @@ session_start();
 
       <!--side nav-->
       <div class="side-nav col-md-2  p-0 mt-3 mb-4">
-        <ul class="navbar-nav me-auto text-center">
+        <ul class="navbar-nav bg-dark me-auto text-center">
           <li class="nav-item " style="pointer-events:none;">
             <a href="#" class="nav-link text-light">
               <h4>Top Brands</h4>
@@ -167,7 +167,7 @@ session_start();
           ?>
         </ul>
         <!--Categories to be displayed-->
-        <ul class="navbar-nav me-auto text-center">
+        <ul class="navbar-nav bg-dark me-auto text-center">
           <li class="nav-item " style="pointer-events:none;">
             <a href="#" class="nav-link text-light">
               <h4>Categories</h4>
