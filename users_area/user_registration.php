@@ -19,12 +19,14 @@ include('../functions/common_function.php');
     <style>
         body {
             font-family: "Lato";
-            background: url("../images/backgroundImage.gif");
+            background-image: url("../images/backgroundImage.gif");
             color: white;
             overflow-x: hidden;
+            backdrop-filter: blur(5px);
+            height: 100%;
         }
 
-        form {
+        .registrationForm {
             box-shadow: 1px 1px 5px white;
             background: rgba(0, 0, 0, 0.7);
             padding: 5px;
@@ -43,7 +45,7 @@ include('../functions/common_function.php');
 
         <div class="row d-flex justify-content-center">
             <div class="col-lg-10 col-xl-5">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="" class="registrationForm"method="post" enctype="multipart/form-data">
                     <h2 class="text-center m-3">
                          User Registration
                     </h2>
@@ -82,7 +84,7 @@ include('../functions/common_function.php');
                         <input type="text" id="user_contact" name="user_contact" class="form-control" placeholder="Enter your mobile number" autocomplete="off" required />
                     </div>
                     <div class="text-center my-4">
-                        <input type="submit" value="Register" name="user_register" class="btn bg-primary text-light p-2 mb-3" style="border-radius: 10px;">
+                        <input type="submit" value="Register" name="user_register" class="btn btn-primary text-light p-2 mb-3" style="border-radius: 10px;">
                         <p class="small fw-bold">Already have an account ? <a href="userLogin.php" style="text-decoration:none;color:orangered;">Login</a></p>
                     </div>
                 </form>

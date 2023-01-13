@@ -23,7 +23,7 @@
     if ($count_order > 0) {
         echo " <h1 class='text-center text-light my-3'>All Orders</h1>
             <table class='table text-light mt-5'>
-                <thead style='background-color: rgb(50, 50, 50);'>
+                <thead class='bg-dark''>
                 <tr>
                     <th>S.No.</th>
                     <th>Amount Due</th>
@@ -34,7 +34,7 @@
                     <th>Status</th>
                 </tr>
                 </thead>
-                <tbody style='background-color: beige;color:black;'> ";
+                <tbody > ";
         $Sno = 1;
         while ($row_orders = mysqli_fetch_assoc($result_orders)) {
             $order_id = $row_orders['order_id'];
@@ -48,7 +48,7 @@
             } else {
                 $order_status = 'Complete';
             }
-            echo "<tr>
+            echo "<tr class='bg-light text-dark'>
             <td>$Sno</td>
             <td>&#x20B9; $amount_due</td>
             <td>$total_products</td>
@@ -57,15 +57,15 @@
             <td>$order_status</td>;" ?>
     <?php
             if ($order_status == 'Complete') {
-                echo "<td>Paid</td>";
+                echo "<td>Paid</td></tr></tbody>";
             } else {
                 echo "<td><a href='confirm_payment.php?order_id=$order_id'class='text-dark'>Confirm</a></td></tr></tbody>";
             }
             $Sno += 1;
         }
-    }else{
-        echo "<h3 class='text-center text-light'style='margin-top:20%'>No Orders Found, Wanna add items?</h3>
-        <a href='../displayAll.php'class='text-info text-decoration-none'>Explore</a>";
+    } else {
+        echo "<h3 class='text-center text-light'style='margin-top:20%'>It seems that you have not ordered yet?</h3>
+        <a href='../displayAll.php'class='text-info text-decoration-none'>Catalog</a>";
     }
 
     ?>

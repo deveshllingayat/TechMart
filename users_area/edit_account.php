@@ -59,7 +59,7 @@ if (isset($_GET['edit_account'])) {
         <div class="form-outline mb-4">
             <input type="text" class="form-control w-50 m-auto" value="<?php echo "$user_contact" ?>" name="user_contact">
         </div>
-        <button type="submit"name="user_update" class="btn btn-primary text-light px-3 py-2 mb-3" style="border-radius:10px;">Update</button>
+        <button type="submit"name="user_update" class="btn btn-dark text-light px-3 py-2 mb-3" style="border-radius:10px;">Update</button>
     </form>
 </body>
 

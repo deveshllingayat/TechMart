@@ -26,9 +26,9 @@ session_start();
 </head>
 
 <body>
-  <div class="container-fluid p-0">
+  <div class="container-fluid bg-secondary p-0">
     <!--first child-->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar bg-dark navbar-expand-lg">
       <div class="container-fluid">
         <h4 id="logo">tm</h4>
         <a class="navbar-brand" href="#"></a>
@@ -76,7 +76,7 @@ session_start();
     <div class="row">
       <div class="col-md-2 p-0">
         <ul class="my_profile_nav navbar-nav text-center mt-4"style="background-color:#E8E8E8;height:100vh;">
-          <li class="nav-item text-light"style="background-color:rgb(50,50,50);border:1 px outset white;">
+          <li class="nav-item bg-dark text-light pe-none"style="border:1 px outset white;">
             <a class="nav-link" href="#">
               <h4>Your Profile</h4>
             </a>

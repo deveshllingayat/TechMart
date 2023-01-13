@@ -24,7 +24,7 @@ session_start();
 <body>
   <div class="container-fluid p-0">
     <!--first child-->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar bg-dark navbar-expand-lg">
       <div class="container-fluid">
         <h4 id="logo">tm</h4>
         <a class="navbar-brand" href="#"></a>

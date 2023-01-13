@@ -10,9 +10,9 @@ $get_ip_address = getIPAddress();
 $cart_query_price = "Select * from `cart_details` where ip_address = '$get_ip_address'";
 $result_cart_price = mysqli_query($con, $cart_query_price);
 while ($row_data = mysqli_fetch_array($result_cart_price)) {
-    $product_id = array($row_data['product_id']);
-    $product_Id = $row_data['product_id'];
-    $get_cart = "select * from `cart_details` where product_id=$product_Id";
+    $product_id_arr = array($row_data['product_id']);
+    $product_id = $row_data['product_id'];
+    $get_cart = "select * from `cart_details` where product_id=$product_id";
     $run_cart = mysqli_query($con, $get_cart);
     $get_item_quantity = mysqli_fetch_array($run_cart);
     $quantity = $get_item_quantity['quantity'];
@@ -25,7 +25,8 @@ while ($row_data = mysqli_fetch_array($result_cart_price)) {
     }
 }
 //to store array of product ids and quantities in the database we are serializing the array values
-$serialized_product_id = serialize($product_id);
+
+$serialized_product_id = serialize($product_id_arr);
 $serialized_quantity = serialize($quantity_array);
 // to unserialize array 
 // $array will contain ( product id's )
