@@ -25,7 +25,7 @@ function getProducts()
                <h5 class='card-title'>$product_title</h5>
                <p class='card-text'>$description</p>
                <p class='card-price'>Price: &#x20B9; $product_price</p>
-               <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
+               <a href='index.php?add_to_cart=$product_id' class='btn btn-dark'>Add to Cart</a>
                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
             </div>
           </div>
@@ -62,7 +62,7 @@ function getAllProducts()
                <h5 class='card-title'>$product_title</h5>
                <p class='card-text'>$description</p>
                <p class='card-price'>Price: &#x20B9; $product_price</p>
-               <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
+               <a href='index.php?add_to_cart=$product_id' class='btn btn-dark'>Add to Cart</a>
                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
             </div>
           </div>
@@ -145,7 +145,7 @@ function getUniqueCategories()
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
              <p class='card-price'>Price: &#x20B9; $product_price</p>
-             <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
+             <a href='index.php?add_to_cart=$product_id' class='btn btn-dark'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
         </div>
@@ -182,7 +182,7 @@ function getUniqueBrands()
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
              <p class='card-price'>Price: &#x20B9; $product_price</p>
-             <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
+             <a href='index.php?add_to_cart=$product_id' class='btn btn-dark'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
         </div>
@@ -220,7 +220,7 @@ function searchProduct()
              <h5 class='card-title'>$product_title</h5>
              <p class='card-text'>$description</p>
              <p class='card-price'>Price: &#x20B9; $product_price</p>
-             <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
+             <a href='index.php?add_to_cart=$product_id' class='btn btn-dark'>Add to Cart</a>
              <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
           </div>
         </div>
@@ -258,7 +258,7 @@ function viewMore()
                      <h5 class='card-title'>$product_title</h5>
                      <p class='card-text'>$description</p>
                      <p class='card-price'>Price: &#x20B9; $product_price</p>
-                     <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to Cart</a>
+                     <a href='index.php?add_to_cart=$product_id' class='btn btn-dark'>Add to Cart</a>
                      <a href='index.php' class='btn btn-secondary'>Go Home</a>
                   </div>
                 </div>
