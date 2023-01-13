@@ -1,5 +1,4 @@
 <?php 
-include("../includes/connect.php");
 if(isset($_POST['insert_cat'])){
   $category_title = $_POST['cat_title'];
   //select data from database
@@ -25,7 +24,7 @@ if(isset($_POST['insert_cat'])){
   <input type="text" class="form-control" name = "cat_title"placeholder="Category Title" required />
 </div>
 <div class="input-group w-10 mb-2 m-auto"style="display:flex;justify-content:center;">
- <button type="submit" class="btn btn-primary text-light p-2 my-2 border-0" name = "insert_cat">Insert Category</button>
+ <button type="submit" class="btn btn-dark text-light p-2 my-2 border-0" name = "insert_cat">Insert Category</button>
 
 </div>
 </form>

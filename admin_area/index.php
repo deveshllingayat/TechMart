@@ -13,10 +13,13 @@ include('../functions/common_function.php');
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Bootstrap css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- css file-->
-    <link rel="stylesheet" href="../style.css">
+    <!-- font file-->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
     <style>
+        body{
+            background-color: #667292;
+            overflow-x: hidden;
+        }
         .admin_img{
             width:100px;
             object-fit: contain;
@@ -27,23 +30,14 @@ include('../functions/common_function.php');
             bottom:0;
             width:100%;
         }
-        .navbar .navbar-nav .nav-link{
-            color:white;
-            border-radius: 10px;
-        }
-        .navbar .navbar .navbar-nav .nav-link:hover{
-            background-color: black;
-            box-shadow: 1px 1px 5px white;
-            transition: 0.2s;
-        }
+ 
         .button .btn{
             font-size:24px;
             box-shadow: 1px 1px 5px black;
         }   
         #logo{
-        color:yellow;
-        background-color: black;
-        box-shadow:1px 1px 10px black;
+        color:black;
+        background-color: white;
         border-radius:10px;
         font-family:forte;
         padding:3px;
@@ -53,14 +47,13 @@ include('../functions/common_function.php');
             height:80px;
             object-fit: contain;
             border-radius: 10px;
-            
         }
     </style>
 </head>
 <body>
     <div class="container-fluid p-0 m-0">
         <!--first child-->
-        <nav class="navbar navbar-expand-lg navbar-light "style="background-color:#3B71CA;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <div class="container-fluid">
             <h4 id="logo">tm</h4>
                 <h3 class="text-center text-light p-2s"style="font-family:'Lato';font-size:40px;">TechMart Admin Panel</h3>
@@ -151,7 +144,8 @@ include('../functions/common_function.php');
 
         if(isset($_GET['view_products']))
             include('view_products.php');
-        
+        if(isset($_GET['edit_products']))
+            include('edit_products.php');
         ?>
     
     </div>

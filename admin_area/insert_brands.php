@@ -1,5 +1,4 @@
 <?php
-include("../includes/connect.php");
 if (isset($_POST['insert_brand'])) {
   $brand_title = $_POST['brand_title'];
   $brand_logo = $_FILES['brand_logo']['name'];
@@ -34,6 +33,6 @@ if (isset($_POST['insert_brand'])) {
     <input type="file" name="brand_logo" id="brand_logo" class="form-control" required />
   </div>
   <div class="input-group w-10  m-auto" style="display:flex;justify-content:center;">
-    <button type="submit" class="btn btn-primary text-light p-2 mb-2 border-0 "  name="insert_brand">Insert Brand</button>
+    <button type="submit" class="btn btn-dark text-light p-2 mb-2 border-0 "  name="insert_brand">Insert Brand</button>
   </div>
 </form>

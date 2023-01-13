@@ -21,9 +21,9 @@
         echo"<script>alert('Please fill all the available fields.')</script>";
         exit();
        }else{
-        move_uploaded_file($temp_image1,"./product_images/$product_image1");
-        move_uploaded_file($temp_image2,"./product_images/$product_image2");
-        move_uploaded_file($temp_image3,"./product_images/$product_image3");
+        move_uploaded_file($temp_image1,"../images/product_images/$product_image1");
+        move_uploaded_file($temp_image2,"../images/product_images/$product_image2");
+        move_uploaded_file($temp_image3,"../images/product_images/$product_image3");
         //insert products
         $insert_product = "insert into `products` (product_title,product_desc,product_keyword,category_id,brand_id,product_image1,product_image2,product_image3,product_price,date,status) values ('$product_title', '$description','$product_keyword', '$product_category','$product_brand','$product_image1', '$product_image2', '$product_image3','$product_price',NOW(),'$product_status' )";
         $result_query = mysqli_query($con,$insert_product);
@@ -41,18 +41,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insert Products-Admin DashBoard</title>
+    <title>Insert Products</title>
     <!-- Bootstrap CSS link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <!-- font awsome link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- CSS FILE-->
-    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
+
+<style>
+    body{
+            background-color: #667292;
+            overflow-x: hidden;
+            font-family: 'lato';
+        }
+</style>
+
 </head>
-<body class = "text-light"style="background-image:url('https://wallpaperaccess.com/full/3492868.gif');">
-    <div class="container mt-3"> 
-        <h1 class="text-center"style="font-family:'Trebuchet MS';">Insert Products</h1>
+<body>
+    <div class="container mt-3 text-light "> 
+        <h1 class="text-center">Insert Products</h1>
 
         <form action="" method="post" enctype="multipart/form-data">
 
@@ -118,8 +126,8 @@
                 <label for="product_price" class="form-label">Product Price</label>
                 <input type="text"name="product_price"id="product_price"class="form-control" placeholder="Enter Product Price"autocomplete="off"required/>
             </div>
-            <div class="form-outline mb-4 m-auto"style="display:flex;justify-content:center;">
-                <input type="submit"name="insert_product"class="btn btn-primary"value="Insert Product"style="border-radius:15px;font-size:16px;font-family:'Trebuchet MS';color: white;">
+            <div class="form-outline mb-4 m-auto d-flex justify-content-center">
+                <input type="submit"name="insert_product"class="btn btn-dark"value="Insert Product">
             </div>
         </form>
     </div>
