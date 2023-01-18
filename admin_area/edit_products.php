@@ -66,7 +66,7 @@ if(isset($_GET['edit_products'])){
             <select name="product_brands" class="form-select">
                 <option value="<?php echo $brand_title ?>"><?php echo $brand_title ?></option>
                 <?php 
-                    $select_brand_all = "Select * from `categories` ";
+                    $select_brand_all = "Select * from `brands` ";
                     $result_brand_all = mysqli_query($con,$select_brand_all);
                     while($row_brand_all = mysqli_fetch_assoc($result_brand_all)){
                         $brand_title = $row_brand_all['brand_title'];
